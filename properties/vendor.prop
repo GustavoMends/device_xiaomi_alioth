@@ -211,6 +211,7 @@ persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
 debug.egl.hw=0
+debug.gralloc.enable_fb_ubwc=1
 debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_advanced_sf_phase_offset=1
