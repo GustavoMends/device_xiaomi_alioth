@@ -332,6 +332,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# Notch mask
+PRODUCT_PACKAGES += \
+    NotchBarKiller
+
 # OMX
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
