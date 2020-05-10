@@ -97,7 +97,6 @@ on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs-data
-    mkdir /vendor/data/tombstones 0771 system system
     chmod 0644 /dev/elliptic0
     chmod 0644 /dev/elliptic1
     # Enable WLAN cold boot calibration
