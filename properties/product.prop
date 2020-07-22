@@ -1,2 +1,5 @@
+# Incremental FS
+ro.incremental.enable=1
+
 # Use Vulkan backend for Skia UI rendering
 debug.hwui.renderer=skiavk
