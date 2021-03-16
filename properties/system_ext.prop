@@ -1,3 +1,7 @@
+# DPM
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.idletimer.mode=default
+
 # Telephony
 ro.telephony.sim_slots.count=1
 telephony.active_modems.max_count=2
