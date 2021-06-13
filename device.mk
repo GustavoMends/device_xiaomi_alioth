@@ -341,6 +341,11 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
+PRODUCT_PACKAGES += \
+    WifiOverlayM2012K11AC \
+    WifiOverlayM2012K11AG \
+    WifiOverlayM2012K11AI
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
