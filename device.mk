@@ -12,6 +12,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
+    AliothFrameworks \
+    AliothSystemUI \
     SettingsProviderM2012K11AC \
     SettingsProviderM2012K11AG \
     SettingsProviderM2012K11AI \
