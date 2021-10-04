@@ -9,6 +9,9 @@ camera.disable_zsl_mode=true
 # Charger
 ro.charger.disable_init_blank=true
 
+# Disable vsync for cpu rendered apps
+debug.cpurend.vsync=false
+
 # Display
 debug.force_no_blanking=true
 debug.gralloc.gfx_ubwc_disable=0
