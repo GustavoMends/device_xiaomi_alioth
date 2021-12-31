@@ -17,41 +17,41 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.lineageos.settings"
-    android:versionCode="1"
-    android:versionName="1.0"
     android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/device_settings_app_name"
+        android:allowBackup="true"
+        android:label="@string/app_name"
         android:persistent="true"
-        android:theme="@style/Theme.SubSettingsBase"
-        android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true">
+        android:directBootAware="true"
+        android:defaultToDeviceProtectedStorage="true">
 
         <receiver
             android:name=".BootCompletedReceiver"
             android:exported="false">
-            <intent-filter>
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
         <service
             android:name=".thermal.ThermalService"
             android:exported="true"
-            android:permission="ThermalService" />
+            android:permission="ThermalService">
+        </service>
 
         <activity
-            android:name=".thermal.ThermalActivity"
+            android:name=".thermal.ThermalSettingsActivity"
             android:exported="false"
-            android:label="@string/thermal_title">
+            android:label="@string/thermal_title"
+            android:icon="@drawable/ic_thermal_settings"
+            android:theme="@style/Theme.SubSettingsBase_v31">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -64,9 +64,6 @@
             <meta-data
                 android:name="com.android.settings.icon"
                 android:resource="@drawable/ic_thermal_settings" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="1" />
         </activity>
 
     </application>
