@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      SPDX-FileCopyrightText: The Android Open Source Project
+      SPDX-License-Identifier: Apache-2.0
+ -->
+<resources>
+    <!-- Using in SubSettings page including injected settings page -->
+    <style name="Theme.SubSettingsBase_v31" parent="Theme.SettingsBase_v31">
+        <!-- Suppress the built-in action bar -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- Set up edge-to-edge configuration for top app bar -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorControlNormal">?android:attr/colorControlNormal</item>
+        <!-- For AndroidX AlertDialog -->
+        <item name="alertDialogTheme">@style/Theme.AlertDialog.SettingsLib</item>
+    </style>
+
+</resources>
