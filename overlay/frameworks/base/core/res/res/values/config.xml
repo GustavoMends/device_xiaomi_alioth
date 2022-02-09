@@ -632,4 +632,23 @@
         <item>@array/config_sfps_sensor_props_alioth</item>
     </array>
 
+    <!-- List of system apps that are allowed to be locked with app lock.
+         Use with extreme caution. -->
+    <string-array name="config_appLockAllowedSystemApps" translatable="false">
+        <!-- Graphene os camera -->
+        <item>app.grapheneos.camera</item>
+        <!-- Files -->
+        <item>com.android.documentsui</item>
+        <!-- Play store -->
+        <item>com.android.vending</item>
+        <!-- Gallery go -->
+        <item>com.google.android.apps.photosgo</item>
+        <!-- Gmail -->
+        <item>com.google.android.gm</item>
+        <!-- Youtube -->
+        <item>com.google.android.youtube</item>
+        <!-- Via browser. -->
+        <item>mark.via.gp</item>
+    </string-array>
+
 </resources>
