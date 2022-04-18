@@ -123,7 +123,7 @@ TARGET_KERNEL_ARCH := arm64
 KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_SOURCE := kernel/xiaomi/alioth
 TARGET_KERNEL_CONFIG := alioth_defconfig
-TARGET_KERNEL_CLANG_VERSION := r445002
+TARGET_KERNEL_CLANG_VERSION := sdclang
 TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1
 TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
