@@ -146,11 +146,6 @@
         <fqname>@1.0::IDspService/dspservice</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.factory</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::IFactory/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.qccvndhal</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IQccvndhal/qccvndhal</fqname>
@@ -246,18 +241,8 @@
         <fqname>@1.3::IHidlVppService/vppService</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.wifi.wifilearner</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IWifiStats/wifiStats</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
         <fqname>@3.0::IRTPService/imsrtpservice</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.qspmhal</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IQspmhal/default</fqname>
     </hal>
 </manifest>
