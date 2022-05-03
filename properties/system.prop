@@ -25,6 +25,11 @@ persist.vendor.dpm.feature=1
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
+# SkiaGL Threaded
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=skiagl
+renderthread.skia.reduceopstasksplitting=true 
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
