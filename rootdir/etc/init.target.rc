@@ -176,6 +176,11 @@ on boot
 
     write /sys/block/sda/queue/wbt_lat_usec 75000
 
+on boot
+    # FPS Info permissions
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
