@@ -15,6 +15,7 @@ ro.charger.disable_init_blank=true
 
 # Dexopt
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.systemuicompilerfilter=speed
 
 # Display
 debug.force_no_blanking=true
