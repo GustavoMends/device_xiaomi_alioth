@@ -139,6 +139,7 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
+    libbluetooth_audio_session
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
@@ -162,6 +163,13 @@ PRODUCT_PACKAGES += \
     libvisualizer \
     libvolumelistener
 
+# Bluetooth Ant+ Hal Deps
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+PRODUCT_PACKAGES += \
+    AntHalService-Soong \
+    com.dsi.ant.antradio_library \
+    com.dsi.ant@1.0.vendor
+
 # Audio configs
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -176,6 +184,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.bluetooth_dun@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
