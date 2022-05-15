@@ -15,3 +15,6 @@ allow system_app proc_pagetypeinfo:file r_file_perms;
 
 allow system_app vendor_audio_data_file:dir {write add_name search};
 allow system_app vendor_audio_data_file:file {read write create getattr append open};
+
+# Allow Parts write thermals
+allow system_app sysfs_thermal:file rw_file_perms;
