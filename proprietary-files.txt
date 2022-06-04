@@ -631,7 +631,6 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|1ac9feeaddf940a27b5187391c8cb0a6d822d034
 
 # Graphics (Adreno) - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
--vendor/app/com.qualcomm.qti.gpudrivers.kona.api30/com.qualcomm.qti.gpudrivers.kona.api30.apk;PRESIGNED|6e85bf1b79c77e90c41863283655d3543d003a63
 vendor/lib/egl/eglSubDriverAndroid.so|1a1c287a32095bede1cd199594cb7fb89c1c15d0
 vendor/lib/egl/libEGL_adreno.so|4ee434ffeab2568d7187635adae39106ca6163bb
 vendor/lib/egl/libGLESv1_CM_adreno.so|64b58204e029c848e35f50ad163952db497ea90f
