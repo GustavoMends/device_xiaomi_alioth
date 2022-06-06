@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
     com.android.nfc_extras \
     NfcNci \
+    nqnfcinfo \
     SecureElement \
     Tag
 
