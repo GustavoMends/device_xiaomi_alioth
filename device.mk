@@ -415,6 +415,10 @@ PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
     ueventd.qcom.rc
 
+# Storage
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fuse.passthrough.enable=true
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
