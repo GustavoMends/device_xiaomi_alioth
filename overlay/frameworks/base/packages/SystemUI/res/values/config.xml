@@ -38,6 +38,10 @@
     ignore the gaze detection package -->
     <string translatable="false" name="config_cameraProtectionExcludedPackages">com.google.android.as</string>
 
+    <!-- Whether to show estimate in QS header. Default to false in case there's not enough
+     space -->
+    <bool name="config_showBatteryEstimateQSBH">false</bool>
+
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
