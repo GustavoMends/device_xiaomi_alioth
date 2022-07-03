@@ -23,6 +23,9 @@ TARGET_SUPPORTS_QUICK_TAP := true
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
+# Call recording
+TARGET_SUPPORTS_CALL_RECORDING := true
+
 # PixelExperience stuffs
 CUSTOM_BUILD_TYPE := Kitagawa
 
