@@ -1,4 +1,4 @@
-# Unpinned blobs from alioth_global-user 12 RKQ1.200826.002 V13.0.2.0.SKHMIXM release-keys
+# Device proprietary files - from alioth MIUI V13.0.3.0.SKHMIXM package, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
