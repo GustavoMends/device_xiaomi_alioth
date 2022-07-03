@@ -635,20 +635,19 @@
     <!-- List of system apps that are allowed to be locked with app lock.
          Use with extreme caution. -->
     <string-array name="config_appLockAllowedSystemApps" translatable="false">
-        <!-- Graphene os camera -->
-        <item>app.grapheneos.camera</item>
+        <!-- Calendar -->
+        <item>com.google.android.calendar</item>
+        <!-- Clock -->
+        <item>com.google.android.deskclock</item>
+        <!-- Google camera -->
+        <item>com.android.MGC</item>
         <!-- Files -->
         <item>com.android.documentsui</item>
+        <item>com.google.android.apps.nbu.files</item>
         <!-- Play store -->
         <item>com.android.vending</item>
-        <!-- Gallery go -->
-        <item>com.google.android.apps.photosgo</item>
-        <!-- Gmail -->
-        <item>com.google.android.gm</item>
         <!-- Youtube -->
         <item>com.google.android.youtube</item>
-        <!-- Via browser. -->
-        <item>mark.via.gp</item>
     </string-array>
 
 </resources>
