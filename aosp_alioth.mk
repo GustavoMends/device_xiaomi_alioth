@@ -26,6 +26,9 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 # Live walpapers
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
+# Call recording
+TARGET_SUPPORTS_CALL_RECORDING := true
+
 PRODUCT_NAME := aosp_alioth
 PRODUCT_DEVICE := alioth
 PRODUCT_MANUFACTURER := Xiaomi
