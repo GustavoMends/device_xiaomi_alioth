@@ -73,8 +73,8 @@ void load_poco_f3() {
     property_override("ro.product.vendor.manufacturer", "Xiaomi");
     property_override("ro.product.vendor.brand", "POCO");
     property_override("ro.product.vendor.model", "M2012K11AG");
-    property_override("ro.build.fingerprint", "Redmi/alioth_global/alioth:12/RKQ1.200826.002/V13.0.3.0.SKHMIXM:user/release-keys");
-    property_override("ro.build.description", "alioth_global-user 12 RKQ1.200826.002 V13.0.3.0.SKHMIXM release-keys");
+    property_override("ro.build.fingerprint", "Redmi/alioth_global/alioth:12/RKQ1.211001.001/V13.0.4.0.SKHMIXM:user/release-keys");
+    property_override("ro.build.description", "alioth_global-user 12 RKQ1.211001.001 V13.0.4.0.SKHMIXM release-keys");
 }
 
 void load_xiaomi_mi11x() {
