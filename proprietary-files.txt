@@ -68,12 +68,14 @@ vendor/lib/libssrec.so
 
 # Audio-Hardware
 vendor/lib/hw/audio.primary.kona.so
-vendor/lib/vndk/libxlog.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioroute_ext.so
 vendor/lib/libfcsam.so
 vendor/lib/libresampler.so
+vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
+vendor/lib/vndk/libxlog.so
+vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Audio (Firmware)
 vendor/firmware/cs35l41-dsp1-diag-revb2.wmfw
