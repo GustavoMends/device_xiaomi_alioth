@@ -26,9 +26,10 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 # Call recording
 TARGET_SUPPORTS_CALL_RECORDING := true
 
-# PixelExperience stuffs
+# Target
 CUSTOM_BUILD_TYPE := Kitagawa
 
+# Device identifier
 PRODUCT_NAME := aosp_alioth
 PRODUCT_DEVICE := alioth
 PRODUCT_MANUFACTURER := Xiaomi
