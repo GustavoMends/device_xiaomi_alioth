@@ -28,9 +28,9 @@
     </array>
 
     <!-- Power consumption when CPU is suspended -->
-    <item name="cpu.suspend">5.6</item>
+    <item name="cpu.suspend">7.85</item>
     <!-- Additional power consumption when CPU is in a kernel idle loop -->
-    <item name="cpu.idle">5.4</item>
+    <item name="cpu.idle">12.91</item>
 
     <!-- Additional power consumption by CPU excluding cluster and core when
          running -->
@@ -120,93 +120,123 @@
     <!-- Additional power used by a CPU core from cluster 0 when running at
          different speeds, excluding cluster and active cost -->
     <array name="cpu.core_power.cluster0">
-      <value>28.58</value> <!-- 300 MHz CPU speed -->
-      <value>33.13</value> <!-- 403 MHz CPU speed -->
-      <value>46.46</value> <!-- 518 MHz CPU speed -->
-      <value>48.47</value> <!-- 614 MHz CPU speed -->
-      <value>49.64</value> <!-- 691 MHz CPU speed -->
-      <value>51.88</value> <!-- 787 MHz CPU speed -->
-      <value>53.34</value> <!-- 883 MHz CPU speed -->
-      <value>64.64</value> <!-- 979 MHz CPU speed -->
-      <value>71.02</value> <!-- 1075 MHz CPU speed -->
-      <value>75.68</value> <!-- 1171 MHz CPU speed -->
-      <value>78.64</value> <!-- 1248 MHz CPU speed -->
-      <value>80.83</value> <!-- 1344 MHz CPU speed -->
-      <value>85.31</value> <!-- 1420 MHz CPU speed -->
-      <value>87.54</value> <!-- 1516 MHz CPU speed -->
-      <value>91.55</value> <!-- 1612 MHz CPU speed -->
-      <value>95.71</value> <!-- 1708 MHz CPU speed -->
-      <value>105.48</value> <!-- 1804 MHz CPU speed -->
+      <value>51.64</value> <!-- 300 MHz CPU speed -->
+      <value>53.58</value> <!-- 403 MHz CPU speed -->
+      <value>55.51</value> <!-- 518 MHz CPU speed -->
+      <value>56.63</value> <!-- 614 MHz CPU speed -->
+      <value>57.26</value> <!-- 691 MHz CPU speed -->
+      <value>58.99</value> <!-- 787 MHz CPU speed -->
+      <value>59.87</value> <!-- 883 MHz CPU speed -->
+      <value>62.02</value> <!-- 979 MHz CPU speed -->
+      <value>62.96</value> <!-- 1075 MHz CPU speed -->
+      <value>64.01</value> <!-- 1171 MHz CPU speed -->
+      <value>65.85</value> <!-- 1248 MHz CPU speed -->
+      <value>67.21</value> <!-- 1344 MHz CPU speed -->
+      <value>69.05</value> <!-- 1420 MHz CPU speed -->
+      <value>71.79</value> <!-- 1516 MHz CPU speed -->
+      <value>74.46</value> <!-- 1612 MHz CPU speed -->
+      <value>76.39</value> <!-- 1708 MHz CPU speed -->
+      <value>78.768</value> <!-- 1804 MHz CPU speed -->
     </array>
     <!-- Additional power used by a CPU core from cluster 1 when running at
          different speeds, excluding cluster and active cost -->
     <array name="cpu.core_power.cluster1">
-      <value>122.56</value> <!-- 710 MHz CPU speed -->
-      <value>141.76</value> <!-- 825 MHz CPU speed -->
-      <value>163.97</value> <!-- 940 MHz CPU speed -->
-      <value>185.34</value> <!-- 1056 MHz CPU speed -->
-      <value>211.99</value> <!-- 1171 MHz CPU speed -->
-      <value>235.42</value> <!-- 1286 MHz CPU speed -->
-      <value>252.75</value> <!-- 1382 MHz CPU speed -->
-      <value>277.22</value> <!-- 1478 MHz CPU speed -->
-      <value>305.67</value> <!-- 1574 MHz CPU speed -->
-      <value>335.19</value> <!-- 1670 MHz CPU speed -->
-      <value>353.22</value> <!-- 1766 MHz CPU speed -->
-      <value>443.89</value> <!-- 1862 MHz CPU speed -->
-      <value>462.62</value> <!-- 1958 MHz CPU speed -->
-      <value>479.85</value> <!-- 2054 MHz CPU speed -->
-      <value>495.66</value> <!-- 2150 MHz CPU speed -->
-      <value>577.69</value> <!-- 2246 MHz CPU speed -->
-      <value>624.88</value> <!-- 2342 MHz CPU speed -->
-      <value>675.26</value> <!-- 2419 MHz CPU speed -->
+      <value>97.85</value> <!-- 710 MHz CPU speed -->
+      <value>106.38</value> <!-- 825 MHz CPU speed -->
+      <value>114.72</value> <!-- 940 MHz CPU speed -->
+      <value>123.50</value> <!-- 1056 MHz CPU speed -->
+      <value>133.05</value> <!-- 1171 MHz CPU speed -->
+      <value>144.42</value> <!-- 1286 MHz CPU speed -->
+      <value>152.12</value> <!-- 1382 MHz CPU speed -->
+      <value>162.39</value> <!-- 1478 MHz CPU speed -->
+      <value>174.69</value> <!-- 1574 MHz CPU speed -->
+      <value>186.64</value> <!-- 1670 MHz CPU speed -->
+      <value>200.43</value> <!-- 1766 MHz CPU speed -->
+      <value>232.56</value> <!-- 1862 MHz CPU speed -->
+      <value>245.21</value> <!-- 1958 MHz CPU speed -->
+      <value>260.78</value> <!-- 2054 MHz CPU speed -->
+      <value>282.01</value> <!-- 2150 MHz CPU speed -->
+      <value>300.11</value> <!-- 2246 MHz CPU speed -->
+      <value>324.37</value> <!-- 2342 MHz CPU speed -->
+      <value>348.25</value> <!-- 2419 MHz CPU speed -->
     </array>
     <!-- Additional power used by a CPU core from cluster 2 when running at
          different speeds, excluding cluster and active cost -->
     <array name="cpu.core_power.cluster2">
-      <value>154.66</value> <!-- 844 MHz CPU speed -->
-      <value>171.92</value> <!-- 960 MHz CPU speed -->
-      <value>197.43</value> <!-- 1075 MHz CPU speed -->
-      <value>219.77</value> <!-- 1190 MHz CPU speed -->
-      <value>241.71</value> <!-- 1305 MHz CPU speed -->
-      <value>261.55</value> <!-- 1401 MHz CPU speed -->
-      <value>297.38</value> <!-- 1516 MHz CPU speed -->
-      <value>334.93</value> <!-- 1632 MHz CPU speed -->
-      <value>369.06</value> <!-- 1747 MHz CPU speed -->
-      <value>395.15</value> <!-- 1862 MHz CPU speed -->
-      <value>442.56</value> <!-- 1977 MHz CPU speed -->
-      <value>487.67</value> <!-- 2073 MHz CPU speed -->
-      <value>619.82</value> <!-- 2169 MHz CPU speed -->
-      <value>621.20</value> <!-- 2265 MHz CPU speed -->
-      <value>672.03</value> <!-- 2361 MHz CPU speed -->
-      <value>695.76</value> <!-- 2557 MHz CPU speed -->
-      <value>738.38</value> <!-- 2553 MHz CPU speed -->
-      <value>793.35</value> <!-- 2649 MHz CPU speed -->
-      <value>875.29</value> <!-- 2745 MHz CPU speed -->
-      <value>927.65</value> <!-- 2841 MHz CPU speed -->
-      <value>1027.17</value> <!-- 3187 MHz CPU speed -->
+      <value>105.19</value> <!-- 844 MHz CPU speed -->
+      <value>113.56</value> <!-- 960 MHz CPU speed -->
+      <value>122.70</value> <!-- 1075 MHz CPU speed -->
+      <value>132.18</value> <!-- 1190 MHz CPU speed -->
+      <value>142.49</value> <!-- 1305 MHz CPU speed -->
+      <value>150.94</value> <!-- 1401 MHz CPU speed -->
+      <value>168.52</value> <!-- 1516 MHz CPU speed -->
+      <value>182.35</value> <!-- 1632 MHz CPU speed -->
+      <value>199.10</value> <!-- 1747 MHz CPU speed -->
+      <value>216.74</value> <!-- 1862 MHz CPU speed -->
+      <value>244.42</value> <!-- 1977 MHz CPU speed -->
+      <value>262.42</value> <!-- 2073 MHz CPU speed -->
+      <value>309.63</value> <!-- 2169 MHz CPU speed -->
+      <value>321.28</value> <!-- 2265 MHz CPU speed -->
+      <value>332.67</value> <!-- 2361 MHz CPU speed -->
+      <value>353.95</value> <!-- 2557 MHz CPU speed -->
+      <value>379.05</value> <!-- 2553 MHz CPU speed -->
+      <value>409.84</value> <!-- 2649 MHz CPU speed -->
+      <value>443.27</value> <!-- 2745 MHz CPU speed -->
+      <value>493.34</value> <!-- 2841 MHz CPU speed -->
+      <value>527.47</value> <!-- 3187 MHz CPU speed -->
+    </array>
+
+    <!-- Memory bandwidth power values in mA at the rail. There must be one value
+         for each bucket defined in the device tree. -->
+    <array name="memory.bandwidths">
+      <value>22.7</value> <!-- mA for bucket: 100mb/s-1.5 GB/s memory bandwidth -->
     </array>
 
     <!-- Additional power used when screen is ambient mode -->
-    <item name="ambient.on.display0">32</item>
+    <item name="ambient.on.display0">0.1</item>
 
     <!-- Additional power used when screen is turned on at minimum brightness -->
-    <item name="screen.on.display0">98</item>
+    <item name="screen.on.display0">62.66</item>
     <!-- Additional power used when screen is at maximum brightness, compared to
          screen at minimum brightness -->
-    <item name="screen.full.display0">470</item>
+    <item name="screen.full.display0">503.67</item>
 
     <!-- Average power used by the camera flash module when on -->
-    <item name="camera.flashlight">240.47</item>
+    <item name="camera.flashlight">180.22</item>
     <!-- Average power use by the camera subsystem for a typical camera
          application. Intended as a rough estimate for an application running a
          preview and capturing approximately 10 full-resolution pictures per
          minute. -->
-    <item name="camera.avg">900</item>
+    <item name="camera.avg">960.02</item>
 
     <!-- Additional power used when video is playing -->
     <item name="video">25</item>
+    <item name="dsp.video">60.2</item>
+
     <!-- Additional power used when audio is playing -->
     <item name="audio">75</item>
+    <item name="dsp.audio">24.51</item>
+
+    <!-- Power used by bluetooth data transfer in mA -->
+    <item name="bluetooth.active">17.85</item>
+    <!-- Power used when Bluetooth on & connectable, but not connected -->
+    <item name="bluetooth.on">1.35</item>
+
+    <!-- Power used when WIFI on & connectable, but not connected -->
+    <item name="wifi.on">0.96</item>
+    <!-- Power used by WIFI data transfer in mA -->
+    <item name="wifi.active">275.28</item>
+    <!-- Power used during WIFI network scanning in mA -->
+    <item name="wifi.scan">39.57</item>
+
+    <!-- Radio related values. For modems without energy reporting support in firmware, use
+         radio.active, radio.scanning, and radio.on. -->
+    <item name="radio.active">226.02</item>
+    <item name="radio.scanning">98.46</item>
+    <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
+        <value>1.23</value>
+        <value>1.23</value>
+    </array>
 
     <!-- Cellular modem related values.-->
     <item name="modem.controller.sleep">0</item>
@@ -227,6 +257,9 @@
       <value>6</value>
     </array>
     <item name="gps.voltage">3700</item>
+
+    <!-- Power used when GPS on & connectable, but not connected -->
+    <item name="gps.on">114.51</item>
 
     <!-- Idle Receive current for wifi radio in mA.-->
     <item name="wifi.controller.idle">82</item>
