@@ -1,0 +1,14 @@
+[
+    {
+        "remote": "gitlab"
+        "repository": "GustavoMends/vendor_GoogleCamera",
+        "target_path": "vendor/GoogleCamera",
+        "branch": "twelve",
+    },
+   {
+       "remote"      : "pixel-ge",
+       "repository"  : "hardware_xiaomi",
+       "target_path" : "hardware/xiaomi",
+       "branch"      : "twelve"
+   }
+]
