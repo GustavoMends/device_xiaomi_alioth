@@ -1,0 +1,5 @@
+dontaudit untrusted_app_29 cgroup:file read;
+allow untrusted_app_29 proc_qtaguid_stat:file { read open getattr };
+allow untrusted_app_29 proc_zoneinfo:file { read open getattr };
+dontaudit untrusted_app_29 proc:file read;
+allow untrusted_app_29 app_data_file:file { execute };

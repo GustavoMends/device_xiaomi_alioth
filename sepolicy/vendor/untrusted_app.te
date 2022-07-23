@@ -1,2 +1,8 @@
 allow untrusted_app zygote:unix_stream_socket { getopt };
 allow untrusted_app app_data_file:file { execute };
+
+# dontaudit
+dontaudit untrusted_app proc_zoneinfo: file { read };
+dontaudit untrusted_app system_lib_file:file { execmod };
+dontaudit untrusted_app proc_version:file { read };
+allow untrusted_app rootfs:dir { read };
