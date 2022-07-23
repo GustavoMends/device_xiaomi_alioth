@@ -483,7 +483,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.1.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
