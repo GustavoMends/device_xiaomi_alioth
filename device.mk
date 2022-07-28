@@ -379,9 +379,12 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# ParanoidDoze
+# PixelDoze
 PRODUCT_PACKAGES += \
-    ParanoidDoze
+    PixelDoze
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sensor.pickup=xiaomi.sensor.pickup
 
 # Perf
 PRODUCT_PACKAGES += \

@@ -45,10 +45,6 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
-# ParanoidDoze
-ro.sensor.pickup=xiaomi.sensor.pickup
-ro.sensor.proximity=true
-
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
