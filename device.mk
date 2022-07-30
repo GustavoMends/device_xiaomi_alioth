@@ -472,6 +472,14 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.sys.thermal.data.path=/data/vendor/thermal/
 
+# QCRIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.cdma_cap=true \
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.force_ltd_sys_ind=1 \
+    persist.vendor.radio.manual_nw_rej_ct=1
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service-qti
