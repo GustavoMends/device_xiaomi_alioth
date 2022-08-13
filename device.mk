@@ -144,6 +144,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     liba2dpoffload \
     libaudiopreprocessing \
+    libalsautils \
+    libnbaio_mono \
     libbatterylistener \
     libbundlewrapper \
     libcomprcapture \
