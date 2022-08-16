@@ -27,7 +27,7 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 
 # Target
-CUSTOM_BUILD_TYPE := Kitagawa
+CUSTOM_BUILD_TYPE := EOL
 
 # Device identifier
 PRODUCT_NAME := aosp_alioth
