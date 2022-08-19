@@ -190,6 +190,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+# Camera (Shim)
+PRODUCT_PACKAGES += \
+    libpiex_shim
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
