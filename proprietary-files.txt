@@ -610,7 +610,6 @@ vendor/lib64/vendor.display.postproc@1.0.so|42b17608cb441af528513f257b75dfdf01cc
 system/lib/vendor.dolby.hardware.dms@2.0.so
 system/lib64/vendor.dolby.hardware.dms@2.0.so
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
-vendor/etc/dolby/dax-default.xml
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
 vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
 vendor/etc/media_codecs_dolby_audio.xml
