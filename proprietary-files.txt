@@ -575,6 +575,13 @@ vendor/lib64/libgame_enhance.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
+# Display (Configs)
+vendor/etc/display/advanced_sf_offsets.xml
+vendor/etc/default.lm
+vendor/etc/ltm_config_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/mdss_dsi_k11a_38_08_0a_dsc_cmd_mi.xml
+vendor/etc/tunings.txt
+
 # Display (HDR) - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
 vendor/lib64/libhdr_tm.so|4be3cfff1ef40cbc6ad329b79c60881263aa6723
 
