@@ -176,8 +176,7 @@ PRODUCT_PACKAGES += \
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    com.dsi.ant.antradio_library \
-    com.dsi.ant@1.0.vendor
+    com.dsi.ant.antradio_library
 
 # Audio configs
 PRODUCT_COPY_FILES += \
