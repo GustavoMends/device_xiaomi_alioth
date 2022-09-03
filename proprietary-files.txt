@@ -973,6 +973,12 @@ vendor/lib/liblistensoundmodel2.so|80e3840ac350fe1bfdfcfb05daa7e1f5515b58e1
 vendor/lib/libmulawdec.so|89ebb1d9e77911f1abe37405016839d8436a9825
 vendor/lib/libsmwrapper.so|36054619430cfdd392a1bf48f8e37520c7ae245c
 
+# MDM
+vendor/bin/ks
+vendor/bin/mdm_helper
+vendor/bin/mdm_helper_proxy
+vendor/lib64/libmdmimgload.so
+
 # Media (Codec2) - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
 vendor/bin/hw/vendor.qti.media.c2@1.0-service|c170ebc5a0416f609186639125132b87a5650ef8
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|11209316ba8aae64b689217bc13b0804f6620678
@@ -1165,8 +1171,6 @@ system_ext/framework/qcrilhook.jar|da67e8893aadf3e8b1c9cb1ca82a469c6062575b
 vendor/bin/hw/qcrild|34ed5cea445577caa24385185cdb28881135972d
 vendor/bin/ATFWD-daemon|94af1767c77ed9835cbb66b0ba729b71e0044e1a
 vendor/bin/adpl|f63e8d0b9bbda6d91bc86a54385043c5713be86d
-vendor/bin/ks|2bcc675556cd146a8a785145f9d2caa1b659b185
-vendor/bin/mdm_helper|aab4a64e1de5ed4e25e0c6ded9d5dc87afcc6aa2
 vendor/bin/netmgrd|8128fa2bd34cd2132b360d8bc9d27329f8e4b303
 vendor/bin/pd-mapper|b286f6d4b0d2b55e06a531c235f0852185875dff
 vendor/bin/port-bridge|6db865e735a9362e340c37e02392c884ab1f101e
@@ -1195,7 +1199,6 @@ vendor/lib64/deviceInfoServiceModule.so|8776c71794ac41127ca2ee3dcb07a3a0ea9b8daa
 vendor/lib64/libconfigdb.so|864c5a8a78ddf51ed48b6cc2fd6c15f6253bd039
 vendor/lib64/liblqe.so|ce181ad6e14688f81d5e444ad0cb166b34f85bb6
 vendor/lib64/libmdmdetect.so|facfd579c6b83d4b8877b537d3815d268d3126e4
-vendor/lib64/libmdmimgload.so|325a4a412e47c5d088dd8810dc03fc75b24d6ac5
 vendor/lib64/libnetmgr.so|c22a12446f55eb5f68b968dfd080916c5ad06c39
 vendor/lib64/libnetmgr_common.so|f1fcd628a3d731969bd76cd506189038fe384c6d
 vendor/lib64/libnetmgr_nr_fusion.so|ca0f6898adb02c6257f845b73dbc99e79b75611c
