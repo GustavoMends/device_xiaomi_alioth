@@ -20,7 +20,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Quick tap
 TARGET_SUPPORTS_QUICK_TAP := true
 
-# Face Unlock
+# Face unlock
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Live walpapers
