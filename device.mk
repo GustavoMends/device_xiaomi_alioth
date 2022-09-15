@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
     libaudiopreprocessing \
     libalsautils \
     libnbaio_mono \
+    libaudio-resampler \
     libbatterylistener \
     libbundlewrapper \
     libcomprcapture \
