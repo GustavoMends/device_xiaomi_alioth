@@ -63,15 +63,13 @@ vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
 
 # ANT+ 
 vendor/lib/com.dsi.ant@1.0.so
+vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/com.dsi.ant@1.0.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
-# ANT+ (system)
+# ANT+ (System)
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
-
-# ANT+ (vendor)
-vendor/lib/hw/com.dsi.ant@1.0-impl.so
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
 vendor/lib/libacdb-fts.so
@@ -119,7 +117,7 @@ vendor/firmware/spk2_playback_delta.txt
 vendor/firmware/spk2_voice_delta.txt
 vendor/firmware/wlanmdsp.otaupdate
 
-# Audio FX modules
+# Audio (FX modules)
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
@@ -553,7 +551,7 @@ vendor/lib64/libgame_enhance.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
-# Display-calibration
+# Display (Configs)
 vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/default.lm
 vendor/etc/ltm_config_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml
@@ -919,18 +917,18 @@ system_ext/lib64/libmmparser_lite.so|3b9e4149d52d17c015bba8826f6c26d8fbfff8e9
 vendor/lib/libmmosal.so|dd0d1a01f4934e519d86c1e43ab2cfd2cc11f524
 vendor/lib64/libmmosal.so|60b7a94d6cd73c6d5be0e76dd503179adafd79a7
 
-# Media configs - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
+# Media (Configs)
+vendor/etc/media_codecs_performance_c2.xml
+vendor/etc/media_codecs_performance_kona.xml
+vendor/etc/media_codecs_system_default.xml
+
+# Media (Configs) - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
 odm/etc/media_profiles_V1_0.xml|981dd4a7ffb9020aa1142930ff3ae6d07bda12aa
 vendor/etc/media_codecs_c2.xml|490211cad553ce69d536c0e55848b6a7d499260d
 vendor/etc/media_codecs_kona.xml|7892e847a4b664f56bd05f9a08c25f41e9b7f726
 vendor/etc/media_profiles_kona.xml|ec4d3f3a419e747a4b7a5882b817150825dd3aff
 vendor/etc/media_profiles_vendor.xml|ec4d3f3a419e747a4b7a5882b817150825dd3aff
 vendor/etc/system_properties.xml|1fef83105060b01a95a790f1504e58adb1df44f1
-
-# Media configs
-vendor/etc/media_codecs_performance_c2.xml
-vendor/etc/media_codecs_performance_kona.xml
-vendor/etc/media_codecs_system_default.xml
 
 # Mink-Lowi Interface daemon - from LA.UM.9.12.r1-14100.02-SMxx50.QSSI12.0
 vendor/bin/mlid|f161135c43cfcc68f25759459048ead4d8f16087
