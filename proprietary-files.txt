@@ -81,6 +81,18 @@ vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 vendor/lib/libssrec.so
 
+# Audio (Configs)
+vendor/etc/audio_platform_info_qrd.xml
+vendor/etc/audio_policy_engine_configuration.xml
+vendor/etc/audio_policy_engine_default_stream_volumes.xml
+vendor/etc/audio_policy_engine_product_strategies_mi.xml:vendor/etc/audio_policy_engine_product_strategies.xml
+vendor/etc/audio_policy_engine_stream_volumes_mi.xml:vendor/etc/audio_policy_engine_stream_volumes.xml
+vendor/etc/audio_tuning_mixer.txt
+vendor/etc/cirrus.cfg
+vendor/etc/sound_trigger_mixer_paths.xml
+vendor/etc/sound_trigger_mixer_paths_cdp.xml
+vendor/etc/sound_trigger_mixer_paths_qrd.xml
+
 # Audio-Hardware
 vendor/lib/hw/audio.primary.kona.so
 vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
