@@ -1,4 +1,4 @@
-# Unpinned blobs from alioth_global-user 12 RKQ1.200826.002 V13.0.2.0.SKHMIXM release-keys
+# Device proprietary files - from alioth MIUI V13.0.5.0.SKHMIXM package, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
@@ -21,6 +21,7 @@ vendor/lib64/libadsprpc.so|09dad6cfef636c131fdc15924ac5a85c6960568c
 # ADSP modules
 vendor/lib/rfsa/adsp/capi_v2_cirrus_sp.so
 vendor/lib/rfsa/adsp/capi_v2_dap_cpdp.so
+vendor/lib/rfsa/adsp/hrtf5c.bin
 vendor/lib/rfsa/adsp/libMIAIHDR_skel.so
 vendor/lib/rfsa/adsp/libQ6MSFR_manager_skel.so
 vendor/lib/rfsa/adsp/libSuperSensor_skel.so
@@ -51,6 +52,10 @@ vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/misound_karaoke_res.bin
 vendor/lib/rfsa/adsp/misound_karaokemix_res.bin
 vendor/lib/rfsa/adsp/misound_res.bin
+vendor/lib/rfsa/adsp/misound_res_headphone.bin
+vendor/lib/rfsa/adsp/misound_res_spk.bin
+vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so
+vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # ADSP modules (aptX)
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
@@ -68,13 +73,17 @@ vendor/lib/libssrec.so
 
 # Audio-Hardware
 vendor/lib/hw/audio.primary.kona.so
+vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioroute_ext.so
 vendor/lib/libfcsam.so
 vendor/lib/libresampler.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib/vndk/libxlog.so
+vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
+vendor/lib64/libaudioconfigstore.so
 vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Audio (Firmware)
@@ -96,6 +105,7 @@ vendor/firmware/spk1_playback_delta.txt
 vendor/firmware/spk1_voice_delta.txt
 vendor/firmware/spk2_playback_delta.txt
 vendor/firmware/spk2_voice_delta.txt
+vendor/firmware/wlanmdsp.otaupdate
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
@@ -523,6 +533,13 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|2163df1cf5
 # Consumer IR
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.kona.so
 
+# Display
+vendor/lib/libdpps.so
+vendor/lib64/libdpps.so
+vendor/lib64/libgame_enhance.so
+vendor/lib64/libhdrdynamic.so
+vendor/lib64/libhdrdynamicootf.so
+
 # Display-calibration
 vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/default.lm
@@ -606,6 +623,7 @@ vendor/lib64/libcpion.so
 vendor/lib64/libminkdescriptor.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
+vendor/lib64/libwvkeybox.so
 
 # DRM (Widevine)
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
@@ -927,6 +945,7 @@ vendor/lib64/unnhal-acc-hta.so|b580e82e816097693badbe3d0f6c7af319ab4245
 vendor/lib64/unnhal-acc-hvx.so|381286e2bf7e3ff611673962548c78dfd35bc297
 
 # NFC
+vendor/bin/nqnfcinfo
 vendor/etc/libnfc-nxp_RF.conf:vendor/libnfc-nxp_RF.conf
 vendor/lib/libsn100u_fw.so:vendor/lib64/libsn100u_fw.so
 vendor/lib64/jcos_nq_client.so
@@ -1253,12 +1272,16 @@ vendor/bin/mi_thermald
 vendor/etc/init/init.mi_thermald.rc
 
 # Thermal config
+vendor/etc/perf/thermalboost.conf
 vendor/etc/thermal-camera.conf
 vendor/etc/thermal-class0.conf
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal-india-class0.conf
 vendor/etc/thermal-india-mgame.conf
 vendor/etc/thermal-india-normal.conf
+vendor/etc/thermal-india-per-class0.conf
+vendor/etc/thermal-india-per-normal.conf
+vendor/etc/thermal-india-per-video.conf
 vendor/etc/thermal-india-tgame.conf
 vendor/etc/thermal-india-video.conf
 vendor/etc/thermal-map-india.conf
@@ -1267,6 +1290,11 @@ vendor/etc/thermal-mgame.conf
 vendor/etc/thermal-navigation.conf
 vendor/etc/thermal-nolimits.conf
 vendor/etc/thermal-normal.conf
+vendor/etc/thermal-per-camera.conf
+vendor/etc/thermal-per-class0.conf
+vendor/etc/thermal-per-navigation.conf
+vendor/etc/thermal-per-normal.conf
+vendor/etc/thermal-per-video.conf
 vendor/etc/thermal-phone.conf
 vendor/etc/thermal-region-map.conf
 vendor/etc/thermal-tgame.conf
