@@ -123,38 +123,38 @@ vendor/firmware/wlanmdsp.otaupdate
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
-# Bluetooth - from MIUI 13 RKQ1.211001.001 22.7.15
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|1229a014f7204074e32d6e403a3fc1e148730e2a
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|c218b0064c1845a5c17ba687be42b925ff9b93ab
-vendor/lib64/libbtnv.so|7808463b58eb41ec50a0a2b81079229316ec11e3
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/libbtnv.so
 
-# Bluetooth (A2DP) - from MIUI 13 RKQ1.211001.001 22.7.15
-vendor/lib/btaudio_offload_if.so|c4aca3ae5fb0375bfe0f9b9cddad69bc42669d70
-vendor/lib/hw/audio.bluetooth_qti.default.so|473ca8305fa272d5a2661c041226ad43563d078a
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|500b3110a8927c43c4a2e80f458e706e7d4de200
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|487731ce0f11afb09e247f111b10b74c78e20eeb
-vendor/lib/libbluetooth_audio_session_qti.so|b5435c25493396a2fbaca9ce7f9cd4295078a24c
-vendor/lib/libbluetooth_audio_session_qti_2_1.so|71c3087e3d67f2f7a13ca633ec6c14be8e09fc5f
-vendor/lib/libbt-hidlclient.so|4e79657aa53877af7f8d63f2be92d759e22979f8
-vendor/lib/libsoc_helper.so|a80d8e4e2740cbfb369270581475b5921ced5077
-vendor/lib/libsoc_helper_jni.so|e6af4b19ebaf95307068e81e37c8084b3984f35c
-vendor/lib64/btaudio_offload_if.so|c1c1b2236663a0be0cde1a02f89ca4320c395b69
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|aee31162b5d16ecd03c5ff86c18dcafe3229b0fb
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|dc4fc836969f481ab59988c77fa9fa162900ec8b
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|ad2e0a054d9451d6e14fcf651c02b6a1fae6ce5f
-vendor/lib64/liba2dpoffload.so|e61b916b98073f689d976e0ea90baaa88efd7a96
-vendor/lib64/libsoc_helper.so|30dc6288ae0bdd74a2750dbde4362eb1c3cc1de7
-vendor/lib64/libsoc_helper_jni.so|e488f4eda56b37426197074664fc2f466a102460
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|949e8e8c6fde83516d9103ae53e87ecd3a8b6eb6
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|dfb5d4ce5e2f8b59b1d74f7661e75327e4187d78
+# Bluetooth (A2DP)
+vendor/lib/btaudio_offload_if.so
+vendor/lib/hw/audio.bluetooth_qti.default.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
+vendor/lib/libbluetooth_audio_session_qti.so
+vendor/lib/libbluetooth_audio_session_qti_2_1.so
+vendor/lib/libbt-hidlclient.so
+vendor/lib/libsoc_helper.so
+vendor/lib/libsoc_helper_jni.so
+vendor/lib64/btaudio_offload_if.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
+vendor/lib64/liba2dpoffload.so
+vendor/lib64/libsoc_helper.so
+vendor/lib64/libsoc_helper_jni.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Bluetooth (aptX)
 system_ext/lib64/libaptXHD_encoder.so
 system_ext/lib64/libaptX_encoder.so
 
-# Bluetooth (FM) - from MIUI 13 RKQ1.211001.001 22.7.15
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|3037e0bdf95a697318eb12056f8f1949b82aa55a
+# Bluetooth (FM)
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 
 # Camera
 vendor/lib64/camera/com.qti.actuator.alioth_dw9800.so
