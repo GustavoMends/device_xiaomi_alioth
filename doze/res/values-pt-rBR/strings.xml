@@ -15,6 +15,6 @@
 
     <!--Pocket-->
     <string name="pocketmode_gesture_title">Proteção de bolso</string>
-    <string name="pocketmode_gesture_summary">Ao ligar a tela se o aparelho estiver no bolso ou contexto similar será travado com um atraso de 2,4s.</string>    
+    <string name="pocketmode_gesture_summary">Ao ligar a tela se o aparelho estiver no bolso ou contexto similar será desligado com um atraso de 2,4s.</string>    
     
 </resources>
