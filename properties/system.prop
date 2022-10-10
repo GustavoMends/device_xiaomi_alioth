@@ -26,6 +26,7 @@ dalvik.vm.systemuicompilerfilter=speed
 ro.sys.fw.dex2oat_thread_count=8
 
 # Display
+debug.sf.auto_latch_unsignaled=true
 debug.force_no_blanking=true
 debug.gralloc.gfx_ubwc_disable=0
 debug.sf.enable_hwc_vds=0
