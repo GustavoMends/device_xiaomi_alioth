@@ -257,6 +257,7 @@ debug.mdpcomp.logs=0
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.enable_transaction_tracing=false
+debug.sf.frame_rate_multiple_threshold=60
 debug.sf.hw=0
 persist.demo.hdmirotationlock=false
 ro.hardware.egl=adreno
