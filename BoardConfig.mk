@@ -75,9 +75,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Device specific firmware
--include vendor/xiaomi/alioth-firmware/BoardConfigVendor.mk
-
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x546C00000000
 TARGET_NO_RAW10_CUSTOM_FORMAT := true
