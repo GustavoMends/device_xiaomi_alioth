@@ -30,6 +30,6 @@
     <dimen name="status_bar_padding_end">6dp</dimen>
 
     <!-- Margin on the left side of the carrier text on Keyguard -->
-    <dimen name="keyguard_carrier_text_margin">26dp</dimen>
+    <dimen name="keyguard_carrier_text_margin">@dimen/status_bar_padding_start</dimen>
 
 </resources>
