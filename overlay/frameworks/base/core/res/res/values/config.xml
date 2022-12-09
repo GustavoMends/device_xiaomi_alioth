@@ -831,10 +831,10 @@
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
     <string-array name="config_cameraAuxPackageAllowList" translatable="false">
-        <item>org.codeaurora.snapcam</item>
-        <item>com.android.camera</item>
-        <item>org.lineageos.aperture</item>
-        <item>org.lineageos.aperture.dev</item>
+    </string-array>
+
+    <!-- The list of package IDs that are not allowed to use aux cameras. -->
+    <string-array name="config_cameraAuxPackageExcludeList" translatable="false">
     </string-array>
 
     <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
