@@ -838,6 +838,7 @@
         <item>org.telegram.messenger</item>
         <item>org.thunderdog.challegram</item>
         <item>tw.nekomimi.nekogram</item>
+        <item>us.zoom.videomeetings</item>
     </string-array>
 
     <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
