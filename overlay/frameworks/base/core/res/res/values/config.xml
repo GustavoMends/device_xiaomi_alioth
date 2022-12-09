@@ -835,6 +835,9 @@
 
     <!-- The list of package IDs that are not allowed to use aux cameras. -->
     <string-array name="config_cameraAuxPackageExcludeList" translatable="false">
+        <item>org.telegram.messenger</item>
+        <item>org.thunderdog.challegram</item>
+        <item>tw.nekomimi.nekogram</item>
     </string-array>
 
     <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
