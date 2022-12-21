@@ -825,4 +825,7 @@
     -->
     <string name="config_screenRecorderAVCProfileLevel" translatable="false">3.1</string>
 
+     <!-- Determines whether the shell features all run on another thread. -->
+     <bool name="config_enableShellMainThread">true</bool>
+
 </resources>
