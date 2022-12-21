@@ -11,6 +11,8 @@ persist.vendor.cne.feature=1
 # Display
 debug.force_no_blanking=true
 debug.gralloc.gfx_ubwc_disable=0
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=20
 debug.sf.enable_hwc_vds=0
 media.wfd.max_resolution=8
 persist.vendor.color.matrix=2
