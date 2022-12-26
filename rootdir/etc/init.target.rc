@@ -97,7 +97,7 @@ on post-fs-data
     # Enable WLAN cold boot calibration
     write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6390/fs_ready 1
     chmod 0660 /dev/ir_spi
-    #sensors diag2bugreport log dir
+    # sensors diag2bugreport log dir
     mkdir /data/vendor/sensor_log
     chown system system /data/vendor/sensor_log
     chown system system /vendor/etc/sensors/sensor_diag.cfg
@@ -124,7 +124,7 @@ on boot
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chown system system /sys/class/touch/touch_dev/partial_diff_data
     write /dev/cpuset/audio-app/cpus 1-2
-    #USB controller configuration
+    # USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -266,13 +266,13 @@ service vendor.lowi /vendor/bin/sscrpcd
    group system wakelock
    capabilities BLOCK_SUSPEND
 
-#pd-mapper
+# pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
     group system
 
-#Peripheral manager
+# Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system

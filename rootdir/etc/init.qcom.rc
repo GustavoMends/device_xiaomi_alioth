@@ -25,19 +25,19 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import /vendor/etc/init/hw/init.device.rc
 import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.xiaomi.rc
 
 on early-init
-  # create symlink for vendor mount points
+
+    # Create symlink for vendor mount points
     symlink /vendor/firmware_mnt /firmware
     symlink /vendor/bt_firmware /bt_firmware
     symlink /vendor/dsp /dsp
 
-  # Change ownership of sysfs power control node
+    # Change ownership of sysfs power control node
     chown system graphics /sys/class/drm/card0/device/power/control
 
     chown root system /dev/kmsg
@@ -158,7 +158,7 @@ on boot
 
     setprop ro.telephony.call_ring.multiple false
 
-    #Remove SUID bit for iproute2 ip tool
+    # Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
 
@@ -220,7 +220,7 @@ on boot
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
-    #Create persist for camera calibration data
+    # Create persist for camera calibration data
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
 
     # limit discard size to 128MB in order to avoid long IO latency
@@ -250,16 +250,16 @@ on post-fs-data
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
 
-    #Create folder of camera
+    # Create folder of camera
     mkdir /data/vendor/camera 0777 camera camera
     mkdir /data/vendor/camera/offlinelog 0777 cameraserver audio
     chmod 0666 /dev/camlog
 
-    #Create directory for tftp
+    # Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
     mkdir /data/vendor/tombstones/rfs 0771 system system
 
-    #Create directory for SDX55M modem
+    # Create directory for SDX55M modem
     mkdir /data/vendor/tombstones/SDX55M 0771 system system
 
     mkdir /data/vendor/ramdump 0771 root system
@@ -317,10 +317,10 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.3/polling
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
-    #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
+    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
-    #Create directories for Location services
+    # Create directories for Location services
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
@@ -329,7 +329,7 @@ on post-fs-data
     mkdir /dev/socket/location/xtra 0770 gps gps
     mkdir /dev/socket/location/dgnss 0770 gps gps
 
-    #Create directories for wifihal services
+    # Create directories for wifihal services
     mkdir /dev/socket/wifihal 0770 wifi wifi
     chmod 2770 /dev/socket/wifihal
 
@@ -338,10 +338,10 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-    #Create a folder for SRS to be able to create a usercfg file
+    # Create a folder for SRS to be able to create a usercfg file
     #mkdir /data/data/media 0770 media media
 
-    #Create FM dir for patchdownloader
+    # Create FM dir for patchdownloader
     mkdir /data/vendor/fm 0770 system system
     chmod 0770 /data/vendor/fm
 
@@ -365,7 +365,7 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    #Create SWAP related dirs
+    # Create SWAP related dirs
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap
 
@@ -377,10 +377,10 @@ on post-fs-data
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
-    #Create dir for TUI
+    # Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
 
-    #Create dir for dolby
+    # Create dir for dolby
     mkdir /data/vendor/dolby 0770 media media
 
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
@@ -389,30 +389,11 @@ service nqnfcinfo /system/vendor/bin/nqnfcinfo
     user system
     oneshot
 
-service iop /system/vendor/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
-
 service vendor.ssr_setup /vendor/bin/ssr_setup
     user root
     group root
     oneshot
     disabled
-
-on property:ro.vendor.iocgrp.config=1
-    mkdir /dev/blkio
-    mount cgroup none /dev/blkio blkio
-    chown system system /dev/blkio
-    chown system system /dev/blkio/tasks
-    chmod 0664 /dev/blkio/tasks
-    mkdir /dev/blkio/bg 0755 system system
-    chown system system /dev/blkio/bg/tasks
-    chmod 0664 /dev/blkio/bg/tasks
-    write /dev/blkio/blkio.weight 1000
-    write /dev/blkio/bg/blkio.weight 100
 
 on property:persist.vendor.sys.per_app_memcg=1
     setprop ro.config.per_app_memcg true
@@ -437,9 +418,6 @@ on property:persist.vendor.sys.rawdump_copy=0
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
-    #Reset read ahead for dm-0 and dm-1 to 512kb
-    write /sys/block/dm-0/queue/read_ahead_kb 512
-    write /sys/block/dm-1/queue/read_ahead_kb 512
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
@@ -629,8 +607,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
-
-on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
@@ -777,7 +753,7 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/system / ro barrier=1
     setprop sys.usb.config adb
 
-#add poweroffhandler
+# add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
     class core
     user media
@@ -811,7 +787,7 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      capabilities SYS_NICE
      disabled
 
-#service chre /vendor/bin/chre
+# service chre /vendor/bin/chre
 #    class late_start
 #    user system
 #    group system
@@ -827,11 +803,11 @@ service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.andro
     oneshot
     keycodes 114 115 116
 
-#Set GPU Opengles version
+# Set GPU Opengles version
 on property:vendor.opengles.version=*
     setprop ro.opengles.version ${vendor.opengles.version}
 
-#Set gpu available frequencies property
+# Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
 

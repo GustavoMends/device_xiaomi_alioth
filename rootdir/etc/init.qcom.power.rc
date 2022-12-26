@@ -32,10 +32,6 @@ on enable-low-power
 on property:sys.boot_completed=1
     trigger enable-low-power
 
-    # Runtime fs tuning
-    write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
-
     # Block layer tuning: discard chunk size up to 128MB
     # Otherwise, contiguous discards can be merged
     write /sys/block/sda/queue/discard_max_bytes 134217728
@@ -46,10 +42,13 @@ on property:sys.boot_completed=1
 
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-3,5-6
+    write /dev/cpuset/foreground/boost/cpus 4-6
+    write /dev/cpuset/foreground/cpus 0-3,4-6
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon-dedicated/cpus 0-7
 
     # Setup runtime blkio
     # value for group_idle is us
@@ -85,12 +84,6 @@ on init
     # Setup permission for Power HAL
     chown system system /dev/cpu_dma_latency
     chmod 0664 /dev/cpu_dma_latency
-
-    # Boot time fs tuning
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/scheduler cfq
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sda/queue/nr_requests 256
 
     # Disable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkscale_enable 0
