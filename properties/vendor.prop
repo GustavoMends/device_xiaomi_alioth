@@ -158,6 +158,7 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 persist.bluetooth.sbc_hd_higher_bitrate=1
 persist.vendor.btstack.enable.lpa=true
+vendor.hw.fm.init=0
 
 # Camera
 persist.vendor.camera.perflock.enable=0
