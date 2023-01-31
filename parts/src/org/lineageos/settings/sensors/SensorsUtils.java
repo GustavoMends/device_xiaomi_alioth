@@ -23,7 +23,7 @@ import android.hardware.SensorManager;
 public final class SensorsUtils {
     public static Sensor getSensor(SensorManager sm, String type) {
         for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
-            if (type.equals(sensor.getStringType())) {
+            if (type.equals(sensor.getStringType()) && sensor.isWakeUpSensor()) {
                 return sensor;
             }
         }
