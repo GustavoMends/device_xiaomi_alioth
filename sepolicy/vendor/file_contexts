@@ -64,6 +64,9 @@
 # SSR
 /sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name                           u:object_r:vendor_sysfs_ssr:s0
 
+# SDX55M tombstones
+/data/vendor/tombstones/SDX55M(/.*)?                                                                u:object_r:mdm_tombstone_data_file:s0
+
 # Thermal
 /vendor/bin/mi_thermald                                                                             u:object_r:vendor_mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?                                                                          u:object_r:vendor_thermal_data_file:s0
