@@ -765,7 +765,6 @@ vendor/lib64/vendor.qti.gnss@4.0.so
 # GNSS (Configs)
 vendor/etc/apdr.conf
 vendor/etc/flp.conf
-vendor/etc/gps.conf
 vendor/etc/izat.conf
 vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
