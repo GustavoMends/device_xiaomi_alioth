@@ -21,6 +21,9 @@ persist.vendor.color.matrix=2
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.idletimer.mode=default
 
+# Feature flags
+persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
