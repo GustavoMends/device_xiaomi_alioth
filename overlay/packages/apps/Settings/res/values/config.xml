@@ -36,7 +36,6 @@
          frameworks/base/core/res/res/values/config.xml's config_availableColorModes are shown. -->
     <string-array name="config_color_mode_options_strings" translatable="false">
         <item>Vivid</item>
-        <item>Saturated</item>
         <item>Original</item>
         <item>P3</item>
         <item>sRGB</item>
@@ -47,7 +46,6 @@
          frameworks/base/core/res/res/values/config.xml's config_availableColorModes are shown. -->
     <integer-array name="config_color_mode_options_values" translatable="false">
         <item>258</item>
-        <item>256</item>
         <item>257</item>
         <item>268</item>
         <item>267</item>
