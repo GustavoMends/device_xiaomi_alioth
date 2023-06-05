@@ -303,13 +303,6 @@ persist.vendor.radio.sib16_support=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,33
 
-# Refresh Rate
-ro.surface_flinger.set_display_power_timer_ms=1000
-ro.surface_flinger.set_idle_timer_ms=1000
-ro.surface_flinger.set_touch_timer_ms=800
-ro.surface_flinger.use_content_detection_for_refresh_rate=true
-vendor.display.idle_time=1100
-
 # Radio Perf
 # RIL Battery Saving off
 persist.vendor.radio.add_power_save=0
