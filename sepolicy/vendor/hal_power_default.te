@@ -34,7 +34,3 @@ set_prop(hal_power_default, vendor_power_prop)
 
 # Allow Power hal to write to sysfs_touchpanel
 allow hal_power_default sysfs_touchpanel:file w_file_perms;
-
-type vendor_touchfeature_device, dev_type;
-
-allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
