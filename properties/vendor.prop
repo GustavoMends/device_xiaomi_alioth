@@ -2,7 +2,6 @@
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=1
-af.resampler.quality=7
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
 persist.audio.button_jack.profile=volume
@@ -27,11 +26,6 @@ persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=true
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 ro.audio.monitorRotation=true
-ro.audio.resampler.psd.cutoff_percent=98
-ro.audio.resampler.psd.halflength=960
-ro.audio.resampler.psd.stopband=132
-ro.audio.resampler.psd.tbwcheat=0
-ro.audio.usb.period_us=20375
 ro.qc.sdk.audio.fluencetype=none
 ro.qc.sdk.audio.ssr=false
 ro.vendor.audio.enhance.support=false
@@ -39,6 +33,8 @@ ro.vendor.audio.gain.support=true
 ro.vendor.audio.game.effect=true
 ro.vendor.audio.karaok.support=true
 ro.vendor.audio.ns.support=false
+ro.vendor.audio.miui.karaoke.show=false
+ro.vendor.audio.miui.karaoke.tencent.show=false
 ro.vendor.audio.ring.filter=true
 ro.vendor.audio.scenario.support=true
 ro.vendor.audio.sdk.fluencetype=fluence
@@ -149,9 +145,6 @@ persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
-persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.scram.enabled=false
 persist.vendor.qcom.bluetooth.soc=hastings
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
@@ -192,28 +185,17 @@ vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=1
 debug.sdm.support_writeback=0
 
-# Display
+# Display (Surfaceflinger)
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.set_display_power_timer_ms?=1000
+ro.surface_flinger.set_idle_timer_ms?=4000
+ro.surface_flinger.set_touch_timer_ms?=4000
 ro.surface_flinger.use_color_management=true
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.vendor.display.paneltype=2
 vendor.display.defer_fps_frame_count=2
-
-# SoundTrigger-Miui
-ro.vendor.audio.miui.karaoke.show=false
-ro.vendor.audio.miui.karaoke.tencent.show=false
-
-# MiSound
-persist.vendor.audio.misound.disable=true
-ro.vendor.audio.misound.bluetooth.enable=true
-
-# Display Refresh Rate
-ro.surface_flinger.set_idle_timer_ms?=4000
-ro.surface_flinger.set_touch_timer_ms?=4000
-ro.surface_flinger.set_display_power_timer_ms?=1000
-ro.surface_flinger.use_content_detection_for_refresh_rate=true
-vendor.display.defer_fps_frame_count?=2
 
 # DRM
 drm.service.enabled=true
@@ -284,6 +266,7 @@ persist.radio.dynamic_sar=false
 persist.radio.multisim.config=dsds
 persist.rcs.supported=0
 persist.vendor.data.mode=concurrent
+persist.vendor.radio.add_power_save=0
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.atfwd.start=true
 persist.vendor.radio.cdma_cap=true
@@ -302,10 +285,6 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,33
-
-# Radio Perf
-# RIL Battery Saving off
-persist.vendor.radio.add_power_save=0
 
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
@@ -336,7 +315,7 @@ vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=0
 vendor.usb.use_gadget_hal=0
 
-# Volume steps
+# Volume
 ro.config.media_vol_steps=30
 ro.config.vc_call_vol_steps=11
 
