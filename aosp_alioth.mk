@@ -35,4 +35,4 @@ PRODUCT_MODEL := POCO F3
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "POCO/alioth_eea/alioth:13/TKQ1.220829.002/V14.0.7.0.TKHEUXM:user/release-keys"
+BUILD_FINGERPRINT := "POCO/alioth_eea/alioth:13/TKQ1.220829.002/V14.0.9.0.TKHEUXM:user/release-keys"
