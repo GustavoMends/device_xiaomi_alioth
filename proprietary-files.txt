@@ -337,6 +337,7 @@ vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/libHalSuperSensorServer.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libMIAIHDRhvx_interface.so
+vendor/lib64/libPlatformValidatorShared.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libSuperSensor.so
 vendor/lib64/libSuperSensorCPU.so
@@ -347,6 +348,8 @@ vendor/lib64/libalhLDC.so
 vendor/lib64/libarcdualcamsat.so
 vendor/lib64/libarcmulticamsat.so
 vendor/lib64/libc++_shared.so
+vendor/lib64/libcalculator.so
+vendor/lib64/libcalculator_domains.so
 vendor/lib64/libcamera_dirty.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamera_scene.so
