@@ -4,6 +4,7 @@ suspend.short_suspend_backoff_enabled=true
 suspend.max_sleep_time_millis=40000
 
 # Blur
+ro.launcher.blur.appLaunch=0
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
 
