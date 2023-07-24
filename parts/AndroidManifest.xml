@@ -23,6 +23,9 @@
 
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -43,6 +46,11 @@
             android:name=".thermal.ThermalService"
             android:exported="true"
             android:permission="ThermalService">
+        </service>
+
+        <service android:name=".doze.DozeService"
+                 android:exported="true"
+                 android:permission="XiaomiDozeService">
         </service>
 
         <service
@@ -167,6 +175,18 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+        </activity>
 
         <service
             android:name=".fpsinfo.FPSInfoService"
