@@ -79,7 +79,7 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     group nfc
     disabled
 
-on boot && property:ro.boot.product.hardware.sku=nfc
+on boot && property:ro.boot.product.hardware.sku=alioth
     enable qti_esepowermanager_service_1_1
     enable secureelement-hal_1_2
     enable vendor.nfc_hal_service
