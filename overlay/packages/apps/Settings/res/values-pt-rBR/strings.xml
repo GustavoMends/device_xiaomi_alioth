@@ -13,6 +13,9 @@
 
 <resources>
     <!-- Display settings screen, Color mode options -->
+    <string name="color_option_natural">Natural</string>
+    <string name="color_option_boosted">Realçado</string>
+    <string name="color_option_automatic">Automático</string>
     <string name="color_option_vivid">Vívido</string>
     <string name="color_option_orginal">Original</string>
     <string name="color_option_p3">P3</string>
