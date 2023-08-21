@@ -1,5 +1,6 @@
 # DPM
 persist.vendor.dpm.feature=11
+persist.vendor.dpm.idletimer.mode=default
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
