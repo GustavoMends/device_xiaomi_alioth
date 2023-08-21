@@ -46,4 +46,5 @@ void set_variant_props(const variant_info_t variant) {
 
     if (variant.nfc)
         property_override(SKU_PROP, "alioth");
+        property_override("ro.boot.hardware.sku", "alioth");
 }
