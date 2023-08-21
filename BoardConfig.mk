@@ -147,6 +147,14 @@ BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := $(ALL_PARTITIONS)
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # ( BOARD_SUPER_PARTITION_SIZE - 4MB )
 
+# Partitions - reserved size
+$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_EXTFS_INODE_COUNT := -1))
+$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 1258291200))
+$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
+    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 30720000))
+
 # Platform
 BOARD_VENDOR := xiaomi
 BOARD_USES_QCOM_HARDWARE := true
