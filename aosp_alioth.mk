@@ -16,6 +16,7 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/alioth/device.mk)
 
 # Device specific
+CUSTOM_BUILD_FLAVOR := qssi-user
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_BOOT_ANIMATION_RES := 1080
 
