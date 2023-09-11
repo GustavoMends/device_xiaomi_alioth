@@ -198,6 +198,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libpiex_shim
 
+# Camera (MIUI)
+$(call inherit-product-if-exists, vendor/xiaomi/alioth-miuicamera/products/miuicamera.mk)
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
