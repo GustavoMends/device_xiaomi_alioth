@@ -6,9 +6,6 @@
 
 DEVICE_PATH := device/xiaomi/alioth
 
-# Broken Rules
-BUILD_BROKEN_DUP_RULES := true
-
 # A/B
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 AB_OTA_UPDATER := true
