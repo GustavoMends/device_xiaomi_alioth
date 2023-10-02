@@ -26,23 +26,8 @@
     <string name="dc_dimming_enable_summary">Prevent screen brightness from flickering in dark environments (enabling this option may cause image noise and color distortion).</string>
     <string name="dc_dimming_enable_summary_not_supported">Anti flicker is currently not supported by the kernel</string>
 
-    <!--Display settings fragment -->
-    <string name="display_settings_title">Additional display settings</string>
-    <string name="display_settings_summary">Improve your viewing experience in harsh conditions</string>
-
     <!-- FPS Counter -->
     <string name="fps_info_title">FPS Counter</string>
-
-    <!-- HBM settings -->
-    <string name="hbm_fragment_title">High brightness mode</string>
-    <string name="hbm_fragment_summary">Customize HBM preferences</string>
-    <string name="hbm_mode_title">HBM</string>
-    <string name="hbm_mode_summary">Enable peak luminance</string>
-    <string name="auto_hbm_title">Automatic HBM</string>
-    <string name="auto_hbm_summary">Enable peak luminance based on sunlight</string>
-    <string name="auto_hbm_threshold_title"></string>
-    <string name="auto_hbm_threshold_summary">Threshold (lux)</string>
-    <string name="auto_hbm_mode_warning">Auto brightness needs to be turned on for auto HBM to work</string>
 
     <!-- Per-app refresh rate -->
     <string name="refresh_title">Refresh rate per-app</string>
