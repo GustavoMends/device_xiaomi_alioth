@@ -54,6 +54,9 @@ ro.lmk.use_minfree_levels=true
 ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
 
+# Marketname
+ro.product.mod_device=alioth_global
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
