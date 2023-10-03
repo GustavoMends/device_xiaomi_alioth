@@ -370,6 +370,21 @@
         <item>100000</item>
     </integer-array>
 
+    <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
+         vendors to tune the curves to have exact same brightness for different refresh rate. So
+         flicker could be observed at switch time. The issue is worse at the gamma lower end.
+         In addition, human eyes are more sensitive to the flicker at darker environment.
+         To prevent flicker, we only support higher refresh rates if the display brightness is above
+         a threshold. -->
+    <array name="config_brightnessThresholdsOfPeakRefreshRate">
+        <item>7</item>
+        <item>11</item>
+    </array>
+    <array name="config_ambientThresholdsOfPeakRefreshRate">
+        <item>-1</item>
+        <item>30</item>
+    </array>
+
     <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
         percent. The length of this array is assumed to be one greater than
         config_screenThresholdLevels. The darkening threshold is calculated as
