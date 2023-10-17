@@ -2,10 +2,6 @@
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=1
-audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=true
-persist.audio.button_jack.profile=volume
-persist.audio.button_jack.switch=0
 persist.audio.fluence.speaker=true
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
@@ -33,8 +29,6 @@ ro.vendor.audio.gain.support=true
 ro.vendor.audio.game.effect=true
 ro.vendor.audio.karaok.support=true
 ro.vendor.audio.ns.support=false
-ro.vendor.audio.miui.karaoke.show=false
-ro.vendor.audio.miui.karaoke.tencent.show=false
 ro.vendor.audio.ring.filter=true
 ro.vendor.audio.scenario.support=true
 ro.vendor.audio.sdk.fluencetype=fluence
@@ -121,8 +115,6 @@ vendor.audio.feature.wsa.enable=false
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.output.suspend.supported=false
 vendor.audio.hw.aac.encoder=true
-vendor.audio.offload.buffer.size.kb=256
-vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.passthrough=false
@@ -253,12 +245,6 @@ persist.vendor.hvdcp_opti.disallowed=1
 # Keystore
 ro.hardware.keystore_desede=true
 
-# IMS
-persist.vendor.ims.disableADBLogs=1
-persist.vendor.ims.disableDebugLogs=1
-persist.vendor.ims.disableIMSLogs=1
-persist.vendor.ims.disableQXDMLogs=1
-
 # Media
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
@@ -334,9 +320,6 @@ ro.config.vc_call_vol_steps=11
 
 # WiFi
 wifi.aware.interface=wifi-aware0
-
-# WFD
-debug.sf.enable_hwc_vds=1
 
 # Zygote
 zygote.critical_window.minute=10
