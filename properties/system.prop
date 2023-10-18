@@ -66,9 +66,6 @@ vendor.iop.enable_uxe=0
 
 # LMK
 ro.config.low_ram=false
-ro.lmk.use_minfree_levels=true
-ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=15
 
 # Marketname
 ro.product.mod_device=alioth_global
