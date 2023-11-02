@@ -144,6 +144,12 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     sound_trigger.primary.kona
 
+PRODUCT_PACKAGES += \
+   libaudioroute \
+   libaudioroutev2 \
+   libalsautils \
+   libalsautilsv2
+
 # Audio (Configs)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
