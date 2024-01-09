@@ -92,7 +92,7 @@ TARGET_KERNEL_CONFIG := vendor/alioth_defconfig
 TARGET_USES_ION := true
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := alioth,aliothin
+TARGET_OTA_ASSERT_DEVICE := alioth|aliothin
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
