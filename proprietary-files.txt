@@ -909,24 +909,11 @@ vendor/lib64/libperipheral_client.so
 # Public Libraries - MIUI
 vendor/etc/public.libraries.txt|5786300fa27e1d073726a627949c8f5d68771ad2
 
-# QCC VND HAL
-vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
-vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
-
 # QCV
 vendor/bin/init.qti.qcv.sh
 vendor/etc/init/init.qti.qcv.rc
 vendor/lib64/libsoc_helper.so
 vendor/lib64/libsoc_helper_jni.so
-
-# QDMA
-vendor/app/QCC-TR-UI/QCC-TR-UI.apk
-vendor/bin/qcc-trd
-vendor/etc/init/init.qdmastats.rc
-vendor/lib64/libqdma_file_agent.so
 
 # QMI
 vendor/bin/irsc_util
