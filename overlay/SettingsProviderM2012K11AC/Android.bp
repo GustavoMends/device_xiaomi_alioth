@@ -15,5 +15,5 @@
 runtime_resource_overlay {
     name: "SettingsProviderM2012K11AC",
     sdk_version: "current",
-    product_specific: true,
+    device_specific: true,
 }

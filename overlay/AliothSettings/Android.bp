@@ -15,5 +15,5 @@
 runtime_resource_overlay {
     name: "AliothSettings",
     sdk_version: "current",
-    product_specific: true
+    device_specific: true
 }

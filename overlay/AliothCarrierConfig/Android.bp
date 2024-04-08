@@ -6,5 +6,5 @@
 runtime_resource_overlay {
     aaptflags: ["--keep-raw-values"],
     name: "AliothCarrierConfig",
-    product_specific: true,
+    device_specific: true,
 }

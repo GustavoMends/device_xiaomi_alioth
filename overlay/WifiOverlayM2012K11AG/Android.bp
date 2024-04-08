@@ -4,5 +4,5 @@
 runtime_resource_overlay {
     name: "WifiOverlayM2012K11AG",
     sdk_version: "current",
-    product_specific: true,
+    device_specific: true,
 }
