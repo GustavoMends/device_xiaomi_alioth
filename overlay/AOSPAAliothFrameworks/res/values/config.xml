@@ -35,9 +35,6 @@
     <!-- Whether to intercept inputs on screen off. -->
     <bool name="config_enableKeyHandler">true</bool>
 
-    <!-- Pocket Lock -->
-    <bool name="config_pocketModeSupported">false</bool>
-
     <!-- Fingerprint from stock ROM -->
     <string name="config_stockFingerprint" translatable="false">Redmi/alioth_global/alioth:13/RKQ1.211001.001/V14.0.8.0.TKHMIXM:user/release-keys</string>
 
