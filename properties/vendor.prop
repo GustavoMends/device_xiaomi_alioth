@@ -280,6 +280,7 @@ persist.vendor.pps.disallowed=1
 ro.hardware.keystore_desede=true
 
 # Media
+debug.stagefright.c2inputsurface=-1
 vendor.media.omx=0
 
 # NFC
