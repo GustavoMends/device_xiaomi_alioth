@@ -60,4 +60,6 @@
         <item>267</item>
     </integer-array>
 
+    <!-- Show Force LTE_CA toggle -->
+    <bool name="config_showForceLteCaToggle" translatable="false">true</bool>
 </resources>
