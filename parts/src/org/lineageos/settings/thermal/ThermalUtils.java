@@ -8,17 +8,27 @@ package org.lineageos.settings.thermal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
+import android.provider.MediaStore;
+import android.telecom.DefaultDialerManager;
 import android.view.Display;
 import android.view.WindowManager;
 
 import androidx.preference.PreferenceManager;
 
+import com.android.settingslib.applications.AppUtils;
+
 import org.lineageos.settings.utils.FileUtils;
+
+import java.util.List;
+import java.util.Map;
 
 public final class ThermalUtils {
 
-    private static final String THERMAL_CONTROL = "thermal_control";
+    private static final String THERMAL_CONTROL = "thermal_control_v2";
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_BENCHMARK = 1;
@@ -28,27 +38,35 @@ public final class ThermalUtils {
     protected static final int STATE_GAMING = 5;
     protected static final int STATE_STREAMING = 6;
 
-    private static final String THERMAL_STATE_DEFAULT = "0";
-    private static final String THERMAL_STATE_BENCHMARK = "10";
-    private static final String THERMAL_STATE_BROWSER = "11";
-    private static final String THERMAL_STATE_CAMERA = "12";
-    private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "13";
-    private static final String THERMAL_STATE_STREAMING = "14";
+    private static final Map<Integer, String> THERMAL_STATE_MAP = Map.of(
+        STATE_DEFAULT, "0",
+        STATE_BENCHMARK, "10",
+        STATE_BROWSER, "11",
+        STATE_CAMERA, "12",
+        STATE_DIALER, "8",
+        STATE_GAMING, "13",
+        STATE_STREAMING, "14"
+    );
 
     private static final String THERMAL_BENCHMARK = "thermal.benchmark=";
     private static final String THERMAL_BROWSER = "thermal.browser=";
     private static final String THERMAL_CAMERA = "thermal.camera=";
+    private static final String THERMAL_DEFAULT = "thermal.default=";
     private static final String THERMAL_DIALER = "thermal.dialer=";
     private static final String THERMAL_GAMING = "thermal.gaming=";
     private static final String THERMAL_STREAMING = "thermal.streaming=";
 
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
 
+    private static final String GMAPS_PACKAGE = "com.google.android.apps.maps";
+    private static final String GMEET_PACKAGE = "com.google.android.apps.tachyon";
+
+    private Context mContext;
     private Display mDisplay;
     private SharedPreferences mSharedPrefs;
 
     protected ThermalUtils(Context context) {
+        mContext = context;
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         WindowManager mWindowManager = context.getSystemService(WindowManager.class);
@@ -69,7 +87,8 @@ public final class ThermalUtils {
 
         if (value == null || value.isEmpty()) {
             value = THERMAL_BENCHMARK + ":" + THERMAL_BROWSER + ":" + THERMAL_CAMERA + ":" +
-                    THERMAL_DIALER + ":" + THERMAL_GAMING + ":" + THERMAL_STREAMING;
+                    THERMAL_DIALER + ":" + THERMAL_GAMING + ":" + THERMAL_STREAMING + ":" +
+                    THERMAL_DEFAULT;
             writeValue(value);
         }
         return value;
@@ -100,10 +119,13 @@ public final class ThermalUtils {
             case STATE_STREAMING:
                 modes[5] = modes[5] + packageName + ",";
                 break;
+            case STATE_DEFAULT:
+                modes[6] = modes[6] + packageName + ",";
+                break;
         }
 
         finalString = modes[0] + ":" + modes[1] + ":" + modes[2] + ":" + modes[3] + ":" +
-                modes[4] + ":" + modes[5];
+                modes[4] + ":" + modes[5] + ":" + modes[6];
 
         writeValue(finalString);
     }
@@ -125,38 +147,74 @@ public final class ThermalUtils {
             state = STATE_GAMING;
         } else if (modes[5].contains(packageName + ",")) {
             state = STATE_STREAMING;
+        } else if (modes[6].contains(packageName + ",")) {
+            state = STATE_DEFAULT;
+        } else {
+            // derive a default state based on package name
+            state = getDefaultStateForPackage(packageName);
         }
 
         return state;
     }
 
     protected void setDefaultThermalProfile() {
-        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
+        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_MAP.get(STATE_DEFAULT));
     }
 
     protected void setThermalProfile(String packageName) {
-        String value = getValue();
-        String modes[];
-        String state = THERMAL_STATE_DEFAULT;
+        final int state = getStateForPackage(packageName);
+        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_MAP.get(state));
+    }
 
-        if (value != null) {
-            modes = value.split(":");
-
-            if (modes[0].contains(packageName + ",")) {
-                state = THERMAL_STATE_BENCHMARK;
-            } else if (modes[1].contains(packageName + ",")) {
-                state = THERMAL_STATE_BROWSER;
-            } else if (modes[2].contains(packageName + ",")) {
-                state = THERMAL_STATE_CAMERA;
-            } else if (modes[3].contains(packageName + ",")) {
-                state = THERMAL_STATE_DIALER;
-            } else if (modes[4].contains(packageName + ",")) {
-                state = THERMAL_STATE_GAMING;
-            } else if (modes[5].contains(packageName + ",")) {
-                state = THERMAL_STATE_STREAMING;
-            }
+    private int getDefaultStateForPackage(String packageName) {
+        switch (packageName) {
+            case GMAPS_PACKAGE:
+                return STATE_BROWSER;
+            case GMEET_PACKAGE:
+                return STATE_STREAMING;
         }
 
-        FileUtils.writeLine(THERMAL_SCONFIG, state);
+        final PackageManager pm = mContext.getPackageManager();
+        final ApplicationInfo appInfo;
+        try {
+            appInfo = pm.getApplicationInfo(packageName, /* flags */ 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            return STATE_DEFAULT;
+        }
+
+        switch (appInfo.category) {
+            case ApplicationInfo.CATEGORY_GAME:
+                return STATE_GAMING;
+            case ApplicationInfo.CATEGORY_VIDEO:
+                return STATE_STREAMING;
+            case ApplicationInfo.CATEGORY_MAPS:
+                return STATE_BROWSER;
+        }
+
+        if (AppUtils.isBrowserApp(mContext, packageName, UserHandle.myUserId())) {
+            return STATE_BROWSER;
+        } else if (DefaultDialerManager.getDefaultDialerApplication(mContext).equals(packageName)) {
+            return STATE_DIALER;
+        } else if (isCameraApp(packageName)) {
+            return STATE_CAMERA;
+        } else {
+            return STATE_DEFAULT;
+        }
+        // TODO: STATE_BENCHMARK, STATE_STREAMING
+    }
+
+    private boolean isCameraApp(String packageName) {
+        final Intent cameraIntent =
+                new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA)
+                .setPackage(packageName);
+
+        final List<ResolveInfo> list = mContext.getPackageManager().queryIntentActivitiesAsUser(
+                cameraIntent, PackageManager.MATCH_ALL, UserHandle.myUserId());
+        for (ResolveInfo info : list) {
+            if (info.activityInfo != null) {
+                return true;
+            }
+        }
+        return false;
     }
 }
