@@ -12,7 +12,10 @@ persist.vendor.cne.feature=1
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.systemuicompilerfilter=speed 
 
-# Disable MTE Async for system server
+# Disable async MTE on a few processes
+persist.arm64.memtag.app.com.android.nfc=off
+persist.arm64.memtag.app.com.android.se=off
+persist.arm64.memtag.app.com.google.android.bluetooth=off
 persist.arm64.memtag.system_server=off
 
 # Display
