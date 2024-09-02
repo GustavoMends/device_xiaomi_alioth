@@ -615,7 +615,7 @@ vendor/bin/feature_enabler_client
 vendor/etc/init/feature_enabler_client.rc
 
 # Fingerprint
-vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
+vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
 
 # FM
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
