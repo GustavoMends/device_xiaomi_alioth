@@ -299,9 +299,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     media_codecs_kona.xml \
-    media_codecs_kona_vendor.xml \
-    media_codecs_performance_kona.xml \
-    media_codecs_system_default.xml
+    media_codecs_performance_kona.xml
 
 # Mlipay
 PRODUCT_PACKAGES += \
