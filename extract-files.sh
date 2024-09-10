@@ -75,6 +75,9 @@ EOF
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             grep -q "libpiex_shim.so" "${2}" || "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
             ;;
+        vendor/lib64/libwvhidl.so | vendor/lib64/mediadrm/libwvdrmengine.so)
+            grep -q "libcrypto_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
+            ;;
     esac
 }
 
