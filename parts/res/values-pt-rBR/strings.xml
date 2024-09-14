@@ -5,6 +5,7 @@
  -->
 <resources>
     <string name="thermal_title">Perfis térmicos</string>
+    <string name="thermal_enable">Usar perfis térmicos</string>
     <string name="thermal_summary">Perfis térmicos por aplicativo</string>
     <string name="thermal_default">Padrão</string>
     <string name="thermal_benchmark">Benchmark</string>

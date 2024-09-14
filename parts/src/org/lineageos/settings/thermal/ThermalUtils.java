@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.telecom.DefaultDialerManager;
 import android.view.Display;
 import android.view.WindowManager;
@@ -28,7 +29,9 @@ import java.util.Map;
 
 public final class ThermalUtils {
 
+    private static final String TAG = "ThermalUtils";
     private static final String THERMAL_CONTROL = "thermal_control_v2";
+    private static final String THERMAL_ENABLED = "thermal_enabled";
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_BENCHMARK = 1;
@@ -64,18 +67,56 @@ public final class ThermalUtils {
     private Context mContext;
     private Display mDisplay;
     private SharedPreferences mSharedPrefs;
+    private Boolean mEnabled;
+    private String mCurrentState;
+    private Intent mServiceIntent;
 
-    protected ThermalUtils(Context context) {
+    private static ThermalUtils sInstance;
+
+    private ThermalUtils(Context context) {
         mContext = context;
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         WindowManager mWindowManager = context.getSystemService(WindowManager.class);
         mDisplay = mWindowManager.getDefaultDisplay();
+        mEnabled = isEnabled();
+        mServiceIntent = new Intent(context, ThermalService.class);
     }
 
-    public static void startService(Context context) {
-        context.startServiceAsUser(new Intent(context, ThermalService.class),
-                UserHandle.CURRENT);
+    public static synchronized ThermalUtils getInstance(Context context) {
+        if (sInstance == null) {
+            sInstance = new ThermalUtils(context);
+        }
+        return sInstance;
+    }
+
+    public void startService() {
+        if (mEnabled) {
+            dlog("startService");
+            mContext.startServiceAsUser(mServiceIntent, UserHandle.CURRENT);
+        }
+    }
+
+    private void stopService() {
+        dlog("stopService");
+        mContext.stopService(mServiceIntent);
+    }
+
+    protected Boolean isEnabled() {
+        return mSharedPrefs.getBoolean(THERMAL_ENABLED, false);
+    }
+
+    protected void setEnabled(boolean enabled) {
+        if (mEnabled == enabled) return;
+        dlog("setEnabled: " + enabled);
+        mEnabled = enabled;
+        mSharedPrefs.edit().putBoolean(THERMAL_ENABLED, enabled).apply();
+        if (enabled) {
+            startService();
+        } else {
+            setDefaultThermalProfile();
+            stopService();
+        }
     }
 
     private void writeValue(String profiles) {
@@ -216,5 +257,11 @@ public final class ThermalUtils {
             }
         }
         return false;
+    }
+
+    private static void dlog(String msg) {
+        if (Log.isLoggable(TAG, Log.DEBUG)) {
+            Log.d(TAG, msg);
+        }
     }
 }

@@ -25,6 +25,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
     
         Log.i(TAG, "Boot completed, starting services");
-        ThermalUtils.startService(context);
+        ThermalUtils.getInstance(context).startService();
     }
 }

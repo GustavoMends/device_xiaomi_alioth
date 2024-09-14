@@ -9,6 +9,7 @@
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles</string>
+    <string name="thermal_enable">Use thermal profiles</string>
     <string name="thermal_summary">Per-app thermal profile configuration</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>

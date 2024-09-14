@@ -17,4 +17,12 @@
         <item name="alertDialogTheme">@style/Theme.AlertDialog.SettingsLib</item>
     </style>
 
+    <style name="PreferenceTheme.SettingsLib.Thermal">
+        <item name="android:layout">@layout/thermal_layout</item>
+    </style>
+
+    <style name="Theme.SubSettingsBase_v31.Thermal">
+        <item name="preferenceTheme">@style/PreferenceTheme.SettingsLib.Thermal</item>
+    </style>
+
 </resources>
