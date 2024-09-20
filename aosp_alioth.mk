@@ -23,6 +23,7 @@ TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 # Inherit from alioth device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
 
+# Device identifier
 PRODUCT_NAME := aosp_alioth
 PRODUCT_DEVICE := alioth
 PRODUCT_MANUFACTURER := Xiaomi
