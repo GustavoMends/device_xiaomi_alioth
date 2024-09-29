@@ -241,6 +241,8 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 drm.service.enabled=true
 
 # Fingerprint
+persist.vendor.fingerprint.sensor_location=1080|965|115|local:4630946736638489729
+persist.vendor.fingerprint.type=side
 persist.vendor.qfp=false
 
 # FRP
