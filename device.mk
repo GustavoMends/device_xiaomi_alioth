@@ -175,7 +175,7 @@ PRODUCT_PACKAGES += \
 
 # Consumer IR
 PRODUCT_PACKAGES += \
-    android.hardware.ir-service.xiaomi
+    android.hardware.ir-service.example
 
 # Cgroup and task_profiles
 PRODUCT_COPY_FILES += \
