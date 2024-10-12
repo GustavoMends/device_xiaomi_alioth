@@ -1,5 +1,7 @@
 # Camera
 camera.disable_zsl_mode=true
+persist.vendor.camera.aon.cameraId=8
+persist.vendor.camera.aon8475.cameraId=9
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev
 
 # CNE
@@ -13,6 +15,7 @@ persist.vendor.color.matrix=2
 
 # DPM
 persist.vendor.dpm.feature=1
+persist.vendor.dpm.idletimer.mode=default
 
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1

@@ -648,7 +648,7 @@
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">680</integer>
+    <integer name="config_shutdownBatteryTemperature">600</integer>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
