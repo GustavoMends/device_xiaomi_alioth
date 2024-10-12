@@ -2,7 +2,8 @@
 camera.disable_zsl_mode=true
 persist.vendor.camera.aon.cameraId=8
 persist.vendor.camera.aon8475.cameraId=9
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,tw.nekomimi.nekogram,us.zoom.videomeetings
+vendor.camera.aux.packagelist=com.google.android.GoogleCameraEng,org.codeaurora.snapcam,org.lineageos.aperture
 
 # CNE
 persist.vendor.cne.feature=1
