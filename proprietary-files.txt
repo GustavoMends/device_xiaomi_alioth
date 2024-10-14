@@ -102,10 +102,6 @@ vendor/firmware/spk2_playback_delta.txt
 vendor/firmware/spk2_voice_delta.txt
 
 # Audio FX modules
-system_ext/etc/permissions/audiosphere.xml
-system_ext/framework/audiosphere.jar
-vendor/bin/audioflacapp
-vendor/bin/loadalgo
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
