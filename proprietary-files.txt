@@ -853,10 +853,7 @@ vendor/lib/libsmwrapper.so
 # Media
 system_ext/lib/libmmosal.so
 system_ext/lib/libmmparser_lite.so
-system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
 vendor/lib/libmmosal.so
-vendor/lib64/libmmosal.so
 
 # Media configs
 vendor/etc/media_profiles_kona.xml:vendor/etc/media_profiles_V1_0.xml
