@@ -1,7 +1,9 @@
-# Audio
+# AAudio - MMAP
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=1
+
+# Audio
 audio.deep_buffer.media=true
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
@@ -20,49 +22,36 @@ persist.vendor.audio.fluence.tmic.enabled=false
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
-persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 persist.vendor.audio.misound.disable=true
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.ring.filter.mask=0
 persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=true
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
+ro.audio.monitorRotation=true
 ro.qc.sdk.audio.fluencetype=none
 ro.qc.sdk.audio.ssr=false
-ro.audio.monitorRotation=true
+ro.vendor.audio.enhance.support=false
+ro.vendor.audio.gain.support=true
 ro.vendor.audio.game.effect=true
+ro.vendor.audio.karaok.support=true
+ro.vendor.audio.ns.support=false
 ro.vendor.audio.ring.filter=true
 ro.vendor.audio.scenario.support=true
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
+ro.vendor.audio.sfx.audiovisual=false
 ro.vendor.audio.sfx.earadj=true
 ro.vendor.audio.sfx.scenario=false
 ro.vendor.audio.sos=true
 ro.vendor.audio.soundfx.type=mi
 ro.vendor.audio.soundfx.usb=true
-ro.vendor.audio.surround.support=true
-ro.vendor.audio.us.proximity=true
-ro.vendor.audio.vocal.support=true
-ro.vendor.audio.voice.change.support=true
-ro.vendor.audio.voice.change.youme.support=true
-ro.vendor.audio.voice.change.version=2
-ro.vendor.audio.spk.clean=true
-ro.vendor.audio.spk.stereo=true
-ro.vendor.audio.support.sound.id=true
-ro.vendor.audio.us.type=mius
-ro.vendor.audio.zoom.support=true
-ro.vendor.audio.zoom.type=1
-ro.vendor.audio.enhance.support=false
-ro.vendor.audio.gain.support=true
-ro.vendor.audio.karaok.support=true
-ro.vendor.audio.ns.support=false
-ro.vendor.audio.sfx.audiovisual=false
 ro.vendor.audio.soundtrigger.appdefine.cnn.level=35
 ro.vendor.audio.soundtrigger.appdefine.gmm.level=55
 ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=65
 ro.vendor.audio.soundtrigger.appdefine.vop.level=10
 ro.vendor.audio.soundtrigger.lowpower=true
 ro.vendor.audio.soundtrigger.snr=16
-ro.vendor.audio.soundtrigger=sva
 ro.vendor.audio.soundtrigger.training.level=50
 ro.vendor.audio.soundtrigger.xanzn.cnn.level=80
 ro.vendor.audio.soundtrigger.xanzn.gmm.level=45
@@ -72,7 +61,22 @@ ro.vendor.audio.soundtrigger.xatx.cnn.level=45
 ro.vendor.audio.soundtrigger.xatx.gmm.level=25
 ro.vendor.audio.soundtrigger.xatx.gmm.user.level=40
 ro.vendor.audio.soundtrigger.xatx.vop.level=-10
+ro.vendor.audio.soundtrigger=sva
+ro.vendor.audio.spk.clean=true
+ro.vendor.audio.spk.stereo=true
+ro.vendor.audio.support.sound.id=true
+ro.vendor.audio.surround.support=true
+ro.vendor.audio.us.proximity=true
+ro.vendor.audio.us.type=mius
+ro.vendor.audio.vocal.support=true
+ro.vendor.audio.voice.change.support=true
+ro.vendor.audio.voice.change.version=2
+ro.vendor.audio.voice.change.youme.support=true
+ro.vendor.audio.zoom.support=true
+ro.vendor.audio.zoom.type=1
 tunnel.audio.encode=true
+vendor.audio.adm.buffering.ms=6
+vendor.audio.camera.unsupport_low_latency=true
 vendor.audio.capture.enforce_legacy_copp_sr=true
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
@@ -120,6 +124,7 @@ vendor.audio.feature.vbat.enable=true
 vendor.audio.feature.wsa.enable=false
 vendor.audio.hal.output.suspend.supported=false
 vendor.audio.hw.aac.encoder=true
+vendor.audio.offload.buffer.size.kb=256
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.multiple.enabled=false
@@ -135,11 +140,8 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.audio_hal.in_period_size=144
-vendor.audio_hal.period_size=192
-vendor.audio.adm.buffering.ms=6
-vendor.audio.camera.unsupport_low_latency=true
-vendor.audio.offload.buffer.size.kb=256
 vendor.audio_hal.period_multiplier=2
+vendor.audio_hal.period_size=192
 vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
@@ -151,6 +153,7 @@ bluetooth.profile.avrcp.target.enabled?=true
 bluetooth.profile.bap.broadcast.assist.enabled?=true
 bluetooth.profile.bap.unicast.client.enabled?=true
 bluetooth.profile.bas.client.enabled?=true
+bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.csip.set_coordinator.enabled?=true
 bluetooth.profile.gatt.enabled?=true
 bluetooth.profile.hap.client.enabled?=true
@@ -164,7 +167,6 @@ bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
-bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
@@ -174,8 +176,8 @@ persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.soc=hastings
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
-vendor.qcom.bluetooth.soc=hastings
 vendor.hw.fm.init=0
+vendor.qcom.bluetooth.soc=hastings
 
 # Chipset
 ro.soc.manufacturer=QTI
@@ -188,20 +190,12 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # Display
 debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.color_mode=9
-persist.sys.sf.native_mode=258
 persist.sys.sf.color_saturation=1.0
-ro.surface_flinger.enable_frame_rate_override=false
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.max_virtual_display_dimension=4096
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
+persist.sys.sf.native_mode=258
 ro.vendor.display.paneltype=2
 ro.vendor.display.sensortype=2
 vendor.display.comp_mask=0
+vendor.display.defer_fps_frame_count=2
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_hw_recovery_dump=1
@@ -215,7 +209,23 @@ vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
-vendor.display.defer_fps_frame_count=2
+
+# Display (Phase Offsets)
+debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
+debug.sf.high_fps_early_phase_offset_ns=-4000000
+debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
+
+# Display (Surface Flinger)
+ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.use_color_management=true
+ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # DRM
 drm.service.enabled=true
@@ -241,10 +251,6 @@ debug.mdpcomp.logs=0
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.enable_transaction_tracing=false
-debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
-debug.sf.high_fps_early_phase_offset_ns=-4000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.hw=0
 persist.demo.hdmirotationlock=false
 ro.hardware.egl=adreno
@@ -253,8 +259,8 @@ ro.opengles.version=196610
 vendor.gralloc.disable_ubwc=0
 
 # HVDCP
-persist.vendor.pps.disallowed=1
 persist.vendor.hvdcp_opti.disallowed=1
+persist.vendor.pps.disallowed=1
 
 # Keystore
 ro.hardware.keystore_desede=true
