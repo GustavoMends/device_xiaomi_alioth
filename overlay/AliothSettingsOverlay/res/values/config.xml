@@ -12,9 +12,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Whether to show Smooth Display feature in Settings Options -->
-    <bool name="config_show_smooth_display">true</bool>
-
     <!-- The number of vibration intensity levels supported by the device.
 
          Note that this should correspond to the ability to vary the vibration amplitude, with
@@ -62,4 +59,7 @@
 
     <!-- Show Force LTE_CA toggle -->
     <bool name="config_showForceLteCaToggle" translatable="false">true</bool>
+
+    <!-- Whether to show Smooth Display feature in Settings Options -->
+    <bool name="config_show_smooth_display">true</bool>
 </resources>

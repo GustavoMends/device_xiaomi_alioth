@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "AliothApertureOverlay",
+    product_specific: true,
+}

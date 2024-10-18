@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "AliothSettingsOverlay",
+    product_specific: true,
+}

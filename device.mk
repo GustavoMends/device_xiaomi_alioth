@@ -341,15 +341,18 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    AliothApertureOverlay \
+    AliothCarrierConfigOverlay \
+    AliothFrameworksOverlay \
+    AliothSettingsOverlay \
+    AliothSystemUIOverlay \
+    AliothTelephonyOverlay \
+    AliothWifiOverlay
+
+PRODUCT_PACKAGES += \
     WifiOverlayM2012K11AC \
     WifiOverlayM2012K11AG \
     WifiOverlayM2012K11AI
-
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -473,7 +476,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
-    WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
 

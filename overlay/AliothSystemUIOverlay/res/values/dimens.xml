@@ -16,6 +16,7 @@
 */
 -->
 <resources>
+    <!-- Default device corner radius, used for assist UI -->
     <dimen name="config_rounded_mask_size">156px</dimen>
     <dimen name="config_rounded_mask_size_top">@dimen/config_rounded_mask_size</dimen>
     <dimen name="config_rounded_mask_size_bottom">@dimen/config_rounded_mask_size</dimen>
