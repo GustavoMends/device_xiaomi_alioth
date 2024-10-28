@@ -55,14 +55,6 @@
         </interface>
     </hal>
     <hal format="aidl">
-        <name>android.hardware.ir</name>
-        <version>1</version>
-        <interface>
-            <name>IConsumerIr</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
         <name>android.hardware.light</name>
         <version>2</version>
         <interface>
