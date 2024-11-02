@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="thermal_title">Perfis térmicos</string>
+    <string name="thermal_summary">Perfis térmicos por aplicativo</string>
+    <string name="thermal_default">Padrão</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_browser">Navegador</string>
+    <string name="thermal_camera">Câmera</string>
+    <string name="thermal_dialer">Chamadas</string>
+    <string name="thermal_gaming">Games</string>
+    <string name="thermal_streaming">Streaming</string>
+</resources>
