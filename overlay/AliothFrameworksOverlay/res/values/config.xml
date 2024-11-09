@@ -358,12 +358,14 @@
          To prevent flicker, we only support higher refresh rates if the display brightness is above
          a threshold. -->
     <array name="config_brightnessThresholdsOfPeakRefreshRate">
-        <item>7</item>
-        <item>11</item>
+        <!-- System brightness for 15 nits: round((15-2)/(1000-2)*(255-1)+1) -->
+        <item>4</item> <!-- 20% UI brightness -->
+        <!-- System brightness for 25 nits: round((25-2)/(1000-2)*(255-1)+1) -->
+        <item>7</item> <!-- 27% UI brightness -->
     </array>
     <array name="config_ambientThresholdsOfPeakRefreshRate">
         <item>-1</item>
-        <item>30</item>
+        <item>5</item>
     </array>
 
     <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
