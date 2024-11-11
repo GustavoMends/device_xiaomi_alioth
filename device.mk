@@ -223,6 +223,8 @@ PRODUCT_PACKAGES += \
 
 # Media configs
 PRODUCT_PACKAGES += \
+    media_codecs_c2.xml \
+    media_codecs_performance_c2.xml \
     media_codecs_kona.xml \
     media_codecs_performance_kona.xml
 

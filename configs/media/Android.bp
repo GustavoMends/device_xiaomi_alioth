@@ -5,6 +5,18 @@
 //
 
 prebuilt_etc {
+    name: "media_codecs_c2.xml",
+    src: "media_codecs_c2.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "media_codecs_performance_c2.xml",
+    src: "media_codecs_performance_c2.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "media_codecs_kona.xml",
     src: "media_codecs_kona_vendor.xml",
     vendor: true,
