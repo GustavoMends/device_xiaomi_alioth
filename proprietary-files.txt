@@ -626,11 +626,11 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno)
+vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
@@ -642,11 +642,11 @@ vendor/lib/libgpudataproducer.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
+vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
@@ -689,10 +689,10 @@ vendor/etc/xtra_root_cert.pem
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libaoa.so
-vendor/lib64/libbatching.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
 vendor/lib64/libasn1crtx.so
+vendor/lib64/libbatching.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libgdtap.so
@@ -705,11 +705,11 @@ vendor/lib64/libizat_core.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_api_wds.so
 vendor/lib64/libloc_core.so
 vendor/lib64/libloc_socket.so
 vendor/lib64/liblocation_api.so
 vendor/lib64/liblocationservice.so
-vendor/lib64/libloc_api_wds.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
@@ -866,9 +866,9 @@ vendor/lib64/libmlipay.so
 vendor/lib64/libmlipay@1.1.so
 
 # NFC
-vendor/etc/libnfc-nxp_RF.conf:vendor/libnfc-nxp_RF.conf
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
+vendor/etc/libnfc-nxp_RF.conf:vendor/libnfc-nxp_RF.conf
 vendor/lib/libsn100u_fw.so:vendor/lib64/libsn100u_fw.so
 
 # Neural networks
