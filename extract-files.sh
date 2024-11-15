@@ -63,16 +63,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "/seclabel u:r:mi_thermald:s0/d" "${2}"
             ;;
-        vendor/etc/libnfc-nci.conf)
-            [ "$2" = "" ] && return 0
-            grep -q "LEGACY_MIFARE_READER=1" "${2}" || cat << EOF >> "${2}"
-###############################################################################
-# Mifare Tag implementation
-# 0: General implementation
-# 1: Legacy implementation
-LEGACY_MIFARE_READER=1
-EOF
-            ;;
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
             [ "$2" = "" ] && return 0
             "${SIGSCAN}" -p "9A 0A 00 94" -P "1F 20 03 D5" -f "${2}"
