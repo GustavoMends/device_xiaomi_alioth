@@ -44,24 +44,6 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
 
-    # Setup runtime cpusets
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-3,5-6
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/restricted/cpus 0-3
-
-    # Setup runtime schedTune
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/foreground/schedtune.prefer_high_cap 0
-    write /dev/stune/foreground/schedtune.boost 0
-    write /dev/stune/schedtune.prefer_idle 0
-    write /dev/stune/schedtune.prefer_high_cap 0
-    write /dev/stune/schedtune.boost 0
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.prefer_high_cap 0
-    write /dev/stune/top-app/schedtune.boost 10
-
     # Setup runtime blkio
     # value for group_idle is us
     write /dev/blkio/blkio.weight 1000
@@ -94,27 +76,8 @@ on early-init
 
 on init
     # Setup permission for Power HAL
-    chown system system /dev/stune/top-app/schedtune.boost
     chown system system /dev/cpu_dma_latency
-
-    chmod 0664 /dev/stune/top-app/schedtune.boost
     chmod 0664 /dev/cpu_dma_latency
-
-    # Boot time cpuset and stune
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/background/cpus 0-5
-    write /dev/cpuset/system-background/cpus 0-5
-    write /dev/cpuset/restricted/cpus 2-5
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/foreground/schedtune.prefer_high_cap 1
-    write /dev/stune/foreground/schedtune.boost 100
-    write /dev/stune/schedtune.prefer_idle 1
-    write /dev/stune/schedtune.prefer_high_cap 1
-    write /dev/stune/schedtune.boost 100
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.prefer_high_cap 1
-    write /dev/stune/top-app/schedtune.boost 100
 
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
@@ -145,18 +108,6 @@ on init
     chown system system /dev/cpuset/camera-daemon-dedicated
     chown system system /dev/cpuset/camera-daemon-dedicated/tasks
     chmod 0664 /dev/cpuset/camera-daemon-dedicated/tasks
-
-    # create an stune group for camera-specific processes
-    mkdir /dev/stune/camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
-    write /dev/stune/camera-daemon/schedtune.boost 0
-    chown system system /dev/stune/camera-daemon
-    chown system system /dev/stune/camera-daemon/tasks
-    chmod 0664 /dev/stune/camera-daemon/tasks
-
-    # set default schedTune value for camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
-    write /dev/stune/camera-daemon/schedtune.boost 0
 
     # report max frequency to unity tasks.
     write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
