@@ -10,6 +10,9 @@ dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.systemservercompilerfilter=speed 
 dalvik.vm.systemuicompilerfilter=speed 
 
+# Display (Surface Flinger)
+ro.surface_flinger.enable_layer_caching=false
+
 # Display
 debug.gralloc.gfx_ubwc_disable=0
 debug.hwui.target_cpu_time_percent=20
