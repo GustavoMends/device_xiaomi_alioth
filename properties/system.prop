@@ -22,6 +22,9 @@ debug.sf.enable_hwc_vds=0
 media.wfd.max_resolution=8
 persist.vendor.color.matrix=2
 
+# Display (Surface Flinger)
+ro.surface_flinger.enable_layer_caching=false
+
 # Feature flags
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
