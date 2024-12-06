@@ -6,12 +6,14 @@
 
 cc_library_static {
     name: "libinit_alioth",
-    recovery_available: true,
-    shared_libs: ["libbase"],
-    srcs: ["init_alioth.cpp"],
-    include_dirs: [
-        "system/core/init",
-        "system/libbase/include"
-    ]
+    srcs: [
+        "libinit_alioth.cpp",
+        "libinit_dalvik_heap.cpp",
+        "libinit_utils.cpp",
+        "libinit_variant.cpp"
+    ],
+    export_include_dirs: ["include"],
+    include_dirs: ["system/core/init"],
+    whole_static_libs: ["libbase"],
+    recovery_available: true
 }
-
