@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    aaptflags: ["--keep-raw-values"],
     name: "AliothCarrierConfigOverlay",
+    aaptflags: ["--keep-raw-values"],
     product_specific: true,
 }
