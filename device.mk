@@ -269,6 +269,9 @@ PRODUCT_PACKAGES += \
     WifiOverlayM2012K11AG \
     WifiOverlayM2012K11AI
 
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
