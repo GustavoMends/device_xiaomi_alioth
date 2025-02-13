@@ -357,6 +357,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal-service.qti
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
