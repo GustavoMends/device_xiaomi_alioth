@@ -1,5 +1,7 @@
-// Copyright (C) 2021 KudProject Development
-// SPDX-License-Identifier: Apache-2.0
+ //
+ // SPDX-FileCopyrightText: KudProject Development
+ // SPDX-License-Identifier: Apache-2.0
+ //
 
 runtime_resource_overlay {
     name: "WifiOverlayM2012K11AC",

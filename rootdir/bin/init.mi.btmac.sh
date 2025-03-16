@@ -1,6 +1,8 @@
 #!/vendor/bin/sh
-# Copyright (C) 2021 KudProject Development
-# SPDX-License-Identifier: GPL-3.0-or-later OR Apache-2.0
+#
+# SPDX-FileCopyrightText: KudProject Development
+# SPDX-License-Identifier: Apache-2.0
+#
 
 LOG_TAG="MiSetBtMac"
 logi () { log -t "$LOG_TAG" -p i "$@"; }
