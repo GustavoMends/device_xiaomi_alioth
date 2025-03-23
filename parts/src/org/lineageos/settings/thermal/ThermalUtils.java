@@ -8,11 +8,8 @@ package org.lineageos.settings.thermal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.RemoteException;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.view.Display;
-import android.view.Surface;
 import android.view.WindowManager;
 
 import androidx.preference.PreferenceManager;

@@ -6,14 +6,13 @@
 package org.lineageos.settings.thermal;
 
 import android.app.ActivityTaskManager;
-import android.app.TaskStackListener;
 import android.app.Service;
+import android.app.TaskStackListener;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Configuration;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
