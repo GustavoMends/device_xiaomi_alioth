@@ -20,4 +20,8 @@
     <string name="thermal_navigation">Navigation</string>
     <string name="thermal_streaming">Streaming</string>
     <string name="thermal_video">Video</string>
+
+    <!-- Common -->
+    <string name="unknown">Unknown</string>
+
 </resources>
