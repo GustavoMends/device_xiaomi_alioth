@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
        SPDX-FileCopyrightText: The LineageOS Project
+       SPDX-FileCopyrightText: Paranoid Android
        SPDX-License-Identifier: Apache-2.0
  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,10 +15,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-     <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/thermal_rv_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/thermal_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:text="@string/thermal_loading"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary" />
 
 </LinearLayout>

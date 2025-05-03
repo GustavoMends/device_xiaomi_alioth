@@ -13,7 +13,6 @@ import android.content.pm.PackageManager
 import android.os.UserHandle
 import android.provider.MediaStore
 import android.telecom.DefaultDialerManager.getDefaultDialerApplication
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.preference.PreferenceManager
 import com.android.settingslib.applications.AppUtils.isBrowserApp
@@ -42,6 +41,13 @@ private constructor(
             }
         }
 
+    var value: String = readValue()
+        set(value) {
+            if (field == value) return
+            field = value
+            writeValue(value)
+        }
+
     fun startService() {
         if (enabled) {
             dlog(TAG, "startService")
@@ -54,39 +60,42 @@ private constructor(
         context.stopService(serviceIntent)
     }
 
-    private fun writeValue(profiles: String) {
-        sharedPrefs.edit().putString(THERMAL_CONTROL, profiles).apply()
+    private fun writeValue(value: String) {
+        dlog(TAG, "writing pref value: $value")
+        sharedPrefs.edit().putString(THERMAL_CONTROL, value).apply()
     }
 
-    private fun getValue(): String {
-        var value = sharedPrefs.getString(THERMAL_CONTROL, null)
-        if (value.isNullOrEmpty()) {
-            // Write default empty values
-            value = ThermalState.values().map { it.prefix }.joinToString(":")
-            writeValue(value)
-        }
-        return value
-    }
+    private fun readValue(): String = sharedPrefs.getString(THERMAL_CONTROL, null) ?: DEFAULT_VALUE
 
     fun writePackage(packageName: String, mode: Int) {
-        var value = getValue().replace("$packageName,", "")
-        val modes = value.split(":").toMutableList()
+        dlog(TAG, "writePackage: $packageName -> $mode")
+        var newValue = value.replace("$packageName,", "")
+        val modes = newValue.split(":").toMutableList()
         modes[mode] += "$packageName,"
-        writeValue(modes.joinToString(":"))
+        value = modes.joinToString(":")
     }
 
     fun getStateForPackage(packageName: String): ThermalState {
-        val modes = getValue().split(":")
+        val modes = value.split(":")
         return ThermalState.values().find { state -> modes[state.id].contains("$packageName,") }
             ?: getDefaultStateForPackage(packageName)
     }
 
+    fun resetProfiles() {
+        dlog(TAG, "resetProfiles")
+        value = DEFAULT_VALUE
+    }
+
     fun setDefaultThermalProfile() {
         dlog(TAG, "setDefaultThermalProfile")
-        writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT)
+        writeLine(THERMAL_SCONFIG, THERMAL_STATE_OFF)
     }
 
     fun setThermalProfile(packageName: String) {
+        if (packageName.isEmpty()) {
+            dlog(TAG, "setThermalProfile: packageName is empty")
+            return
+        }
         val state = getStateForPackage(packageName)
         dlog(TAG, "setThermalProfile: $packageName -> $state")
         writeLine(THERMAL_SCONFIG, state.config)
@@ -133,70 +142,60 @@ private constructor(
         val config: String,
         val prefix: String,
         @StringRes val label: Int,
-        @DrawableRes val icon: Int,
     ) {
         BENCHMARK(
             0,
             "10", // thermal-nolimits.conf
             "thermal.benchmark=",
             R.string.thermal_benchmark,
-            R.drawable.ic_thermal_benchmark,
         ),
         BROWSER(
             1,
             "11", // thermal-class0.conf
             "thermal.browser=",
             R.string.thermal_browser,
-            R.drawable.ic_thermal_browser,
         ),
         CAMERA(
             2,
             "12", // thermal-camera.conf
             "thermal.camera=",
             R.string.thermal_camera,
-            R.drawable.ic_thermal_camera,
         ),
         DIALER(
             3,
             "8", // thermal-phone.conf
             "thermal.dialer=",
             R.string.thermal_dialer,
-            R.drawable.ic_thermal_dialer,
         ),
         GAMING(
             4,
             "13", // thermal-tgame.conf
             "thermal.gaming=",
             R.string.thermal_gaming,
-            R.drawable.ic_thermal_gaming,
         ),
         NAVIGATION(
             5,
             "19", // thermal-navigation.conf
             "thermal.navigation=",
             R.string.thermal_navigation,
-            R.drawable.ic_thermal_navigation,
         ),
         VIDEOCALL(
             6,
             "4", // thermal-videochat.conf
             "thermal.streaming=",
             R.string.thermal_streaming,
-            R.drawable.ic_thermal_streaming,
         ),
         VIDEO(
             7,
             "21", // thermal-video.conf
             "thermal.video=",
             R.string.thermal_video,
-            R.drawable.ic_thermal_video,
         ),
         DEFAULT(
             8,
             "0", // thermal-normal.conf
             "thermal.default=",
             R.string.thermal_default,
-            R.drawable.ic_thermal_default,
         ),
     }
 
@@ -206,7 +205,10 @@ private constructor(
         private const val THERMAL_ENABLED = "thermal_enabled"
 
         private const val THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig"
-        private const val THERMAL_STATE_DEFAULT = "0" // thermal-normal.conf
+        private const val THERMAL_STATE_OFF = "0" // thermal-normal.conf
+
+        // Empty value to store if shared preference is null
+        private val DEFAULT_VALUE = ThermalState.values().map { it.prefix }.joinToString(":")
 
         private val NAVIGATION_PACKAGES =
             arrayOf(

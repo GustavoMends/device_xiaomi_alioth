@@ -38,7 +38,7 @@
             android:name=".thermal.ThermalSettingsActivity"
             android:label="@string/thermal_title"
             android:icon="@drawable/ic_thermal_settings"
-            android:theme="@style/Theme.SubSettingsBase_v31.Thermal"
+            android:theme="@style/Theme.SubSettingsBase.Thermal"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
