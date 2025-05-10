@@ -10,6 +10,7 @@ persist.vendor.cne.feature=1
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.systemservercompilerfilter=speed 
 dalvik.vm.systemuicompilerfilter=speed 
 
 # Disable async MTE on a few processes
