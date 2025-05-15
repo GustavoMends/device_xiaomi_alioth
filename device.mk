@@ -220,12 +220,6 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
-# Lineage Health
-$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media configs
 PRODUCT_PACKAGES += \
     media_codecs_c2.xml \
