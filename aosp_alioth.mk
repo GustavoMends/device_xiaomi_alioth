@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from alioth device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
 
+# Inherit some goodies stuff
+$(call inherit-product, vendor/xiaomi/alioth-extra/config.mk)
+
 # Inherit some common PixelOs stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
