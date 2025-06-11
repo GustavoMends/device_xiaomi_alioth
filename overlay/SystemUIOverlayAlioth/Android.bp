@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AliothApertureOverlay",
+    name: "SystemUIOverlayAlioth",
     product_specific: true,
 }

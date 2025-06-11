@@ -261,14 +261,14 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AliothApertureOverlay \
-    AliothCarrierConfigOverlay \
-    AliothFrameworksOverlay \
-    AliothSettingsOverlay \
-    AliothSettingsProviderOverlay \
-    AliothSystemUIOverlay \
-    AliothTelephonyOverlay \
-    AliothWifiOverlay
+    ApertureOverlayAlioth \
+    CarrierConfigOverlayAlioth \
+    FrameworksOverlayAlioth \
+    SettingsOverlayAlioth \
+    SettingsProviderOverlayAlioth \
+    SystemUIOverlayAlioth \
+    TelephonyOverlayAlioth \
+    WifiOverlayAlioth
 
 PRODUCT_PACKAGES += \
     SettingsProviderM2012K11AC \

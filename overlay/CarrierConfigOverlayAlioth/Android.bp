@@ -4,6 +4,7 @@
 //
 
 runtime_resource_overlay {
-    name: "AliothSystemUIOverlay",
+    name: "CarrierConfigOverlayAlioth",
     product_specific: true,
+    aaptflags: ["--keep-raw-values"],
 }

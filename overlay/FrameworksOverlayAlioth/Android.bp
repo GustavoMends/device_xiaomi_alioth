@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AliothFrameworksOverlay",
+    name: "FrameworksOverlayAlioth",
     product_specific: true,
 }

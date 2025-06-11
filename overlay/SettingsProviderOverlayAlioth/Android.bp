@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AliothSettingsOverlay",
+    name: "SettingsProviderOverlayAlioth",
     product_specific: true,
 }

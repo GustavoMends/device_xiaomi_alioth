@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AliothWifiOverlay",
+    name: "TelephonyOverlayAlioth",
     product_specific: true,
 }
