@@ -84,7 +84,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/alioth
-TARGET_KERNEL_CONFIG += vendor/xiaomi/alioth.config
+TARGET_KERNEL_CONFIG := vendor/alioth_defconfig
 
 # Media
 TARGET_USES_ION := true
