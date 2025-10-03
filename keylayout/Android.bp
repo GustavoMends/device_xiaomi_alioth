@@ -1,0 +1,35 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_usr_keylayout {
+    name: "Xiaomi_Smart_Pen_Keyboard.kl",
+    src: "Xiaomi_Smart_Pen_Keyboard.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "kona-mtp-snd-card_Button_Jack.kl",
+    src: "kona-mtp-snd-card_Button_Jack.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "uinput-fortsense.kl",
+    src: "uinput-fortsense.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "uinput-fpc.kl",
+    src: "uinput-fpc.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "uinput-goodix.kl",
+    src: "uinput-goodix.kl",
+    vendor: true,
+}
