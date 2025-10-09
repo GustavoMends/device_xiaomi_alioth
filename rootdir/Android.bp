@@ -58,35 +58,35 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.qcom.power.rc",
     src: "etc/init.qcom.power.rc",
-    sub_dir: "init/hw",
+    relative_install_path: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.qcom.rc",
     src: "etc/init.qcom.rc",
-    sub_dir: "init/hw",
+    relative_install_path: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.recovery.qcom.rc",
     src: "etc/init.recovery.qcom.rc",
-    sub_dir: "init",
+    relative_install_path: "init",
     recovery: true,
 }
 
 prebuilt_etc {
     name: "init.target.rc",
     src: "etc/init.target.rc",
-    sub_dir: "init/hw",
+    relative_install_path: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.xiaomi.rc",
     src: "etc/init.xiaomi.rc",
-    sub_dir: "init/hw",
+    relative_install_path: "init/hw",
     vendor: true,
 }
 

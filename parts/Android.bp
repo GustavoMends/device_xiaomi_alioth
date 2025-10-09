@@ -1,7 +1,7 @@
- //
- // SPDX-FileCopyrightText: The LineageOS Project
- // SPDX-License-Identifier: Apache-2.0
- //
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
 
 android_app {
     name: "XiaomiParts",
@@ -25,6 +25,6 @@ android_app {
 prebuilt_etc {
     name: "privapp_whitelist_org.lineageos.settings.xml",
     src: "permissions/privapp_whitelist_org.lineageos.settings.xml",
-    sub_dir: "permissions",
+    relative_install_path: "permissions",
     system_ext_specific: true,
 }
