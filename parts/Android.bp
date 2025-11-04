@@ -12,19 +12,9 @@ android_app {
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
+    privapp_allowlist: "org.lineageos.settings.xml",
 
     static_libs: [
         "org.lineageos.settings.resources",
     ],
-
-    required: [
-        "privapp_whitelist_org.lineageos.settings.xml",
-    ],
-}
-
-prebuilt_etc {
-    name: "privapp_whitelist_org.lineageos.settings.xml",
-    src: "permissions/privapp_whitelist_org.lineageos.settings.xml",
-    relative_install_path: "permissions",
-    system_ext_specific: true,
 }
