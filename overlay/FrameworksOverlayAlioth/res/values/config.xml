@@ -201,7 +201,7 @@
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
-    <array name="config_autoBrightnessDisplayValuesNits">
+    <integer-array name="config_autoBrightnessDisplayValuesNits">
         <item>5</item>
         <item>5</item>
         <item>5</item>
@@ -260,7 +260,7 @@
         <item>500</item>
         <item>500</item>
         <item>500</item>
-    </array>
+    </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
@@ -296,7 +296,7 @@
          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
 
          This array should be equal in size to config_screenBrightnessBacklight -->
-    <array name="config_screenBrightnessNits">
+    <integer-array name="config_screenBrightnessNits">
         <item>2</item>
         <item>4</item>
         <item>22</item>
@@ -317,7 +317,7 @@
         <item>432</item>
         <item>442</item>
         <item>455</item>
-    </array>
+    </integer-array>
 
     <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
          values by calculating the index to use for lookup and then setting the constraint value
