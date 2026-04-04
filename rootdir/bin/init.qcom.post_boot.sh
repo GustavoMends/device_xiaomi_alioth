@@ -900,28 +900,6 @@ function disable_core_ctl() {
     fi
 }
 
-function enable_swap() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    SWAP_ENABLE_THRESHOLD=1048576
-    swap_enable=`getprop ro.vendor.qti.config.swap`
-
-    # Enable swap initially only for 1 GB targets
-    if [ "$MemTotal" -le "$SWAP_ENABLE_THRESHOLD" ] && [ "$swap_enable" == "true" ]; then
-        # Static swiftness
-        echo 1 > /proc/sys/vm/swap_ratio_enable
-        echo 70 > /proc/sys/vm/swap_ratio
-
-        # Swap disk - 200MB size
-        if [ ! -f /data/vendor/swap/swapfile ]; then
-            dd if=/dev/zero of=/data/vendor/swap/swapfile bs=1m count=200
-        fi
-        mkswap /data/vendor/swap/swapfile
-        swapon /data/vendor/swap/swapfile -p 32758
-    fi
-}
-
 function disable_ppr()
 {
    if [ -f  /sys/module/process_reclaim/parameters/enable_process_reclaim ]; then
@@ -937,8 +915,6 @@ function configure_memory_parameters() {
     # All targets will use 512 pages swap size.
     #
     # Set Low memory killer minfree parameters
-    # 32 bit Non-Go, all memory configurations will use 15K series
-    # 32 bit Go, all memory configurations will use uLMK + Memcg
     # 64 bit will use Google default LMK series.
     #
     # Set ALMK parameters (usually above the highest minfree values)
@@ -948,132 +924,40 @@ function configure_memory_parameters() {
     #
     # Set allocstall_threshold to 0 for all targets.
     #
+echo 0 > /proc/sys/vm/page-cluster
 
-    ProductName=`getprop ro.product.name`
-    low_ram=`getprop ro.config.low_ram`
+#add memory limit to camera cgroup
+MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+MemTotal=${MemTotalStr:16:8}
+if [ $MemTotal -gt 8388608 ]; then
+    let LimitSize=838860800
+else
+    let LimitSize=524288000
+fi
 
-    if true; then
-        echo 0 > /proc/sys/vm/page-cluster
+echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
 
-        #add memory limit to camera cgroup
-        MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-        MemTotal=${MemTotalStr:16:8}
-        if [ $MemTotal -gt 8388608 ]; then
-            let LimitSize=838860800
-        else
-            let LimitSize=524288000
-        fi
+# Set allocstall_threshold to 0 for all targets.
+# Set swappiness to 60 for all targets
+echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
+echo 60 > /proc/sys/vm/swappiness
 
-        echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
-    else
+# Disable wsf for all targets beacause we are using efk.
+# wsf Range : 1..1000 So set to bare minimum value 1.
+echo 1 > /proc/sys/vm/watermark_scale_factor
 
-        # Read adj series and set adj threshold for PPR and ALMK.
-        # This is required since adj values change from framework to framework.
-        adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
-        adj_1="${adj_series#*,}"
-        set_almk_ppr_adj="${adj_1%%,*}"
+# Disable the feature of watermark boost for 8G and below device
+MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+MemTotal=${MemTotalStr:16:8}
 
-        # PPR and ALMK should not act on HOME adj and below.
-        # Normalized ADJ for HOME is 6. Hence multiply by 6
-        # ADJ score represented as INT in LMK params, actual score can be in decimal
-        # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
-        # For uLMK + Memcg, this will be set as 6 since adj is zero.
-        set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
-        echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
-
-        # Calculate vmpressure_file_min as below & set for 64 bit:
-        # vmpressure_file_min = last_lmk_bin + (last_lmk_bin - last_but_one_lmk_bin)
-        if [ "$arch_type" == "aarch64" ]; then
-            minfree_series=`cat /sys/module/lowmemorykiller/parameters/minfree`
-            minfree_1="${minfree_series#*,}" ; rem_minfree_1="${minfree_1%%,*}"
-            minfree_2="${minfree_1#*,}" ; rem_minfree_2="${minfree_2%%,*}"
-            minfree_3="${minfree_2#*,}" ; rem_minfree_3="${minfree_3%%,*}"
-            minfree_4="${minfree_3#*,}" ; rem_minfree_4="${minfree_4%%,*}"
-            minfree_5="${minfree_4#*,}"
-
-            vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
-            echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-        else
-            # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
-            # Disable Core Control, enable KLMK for non-go 8909.
-            if [ "$ProductName" == "msm8909" ]; then
-                disable_core_ctl
-                echo 1 > /sys/module/lowmemorykiller/parameters/enable_lmk
-            fi
-        echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-        fi
-
-        # Enable adaptive LMK for all targets &
-        # use Google default LMK series for all 64-bit targets >=2GB.
-        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-
-        # Enable oom_reaper
-        if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
-            echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
-        fi
-
-        if [[ "$ProductName" != "bengal"* ]]; then
-            #bengal has appcompaction enabled. So not needed
-            # Set PPR parameters for other targets
-            if [ -f /sys/devices/soc0/soc_id ]; then
-                soc_id=`cat /sys/devices/soc0/soc_id`
-            else
-                soc_id=`cat /sys/devices/system/soc/soc0/id`
-            fi
-
-            case "$soc_id" in
-              # Do not set PPR parameters for premium targets
-              # sdm845 - 321, 341
-              # msm8998 - 292, 319
-              # msm8996 - 246, 291, 305, 312
-              "321" | "341" | "292" | "319" | "246" | "291" | "305" | "312")
-                ;;
-              *)
-                #Set PPR parameters for all other targets.
-                echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-                echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-                echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-                echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-                echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-                echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-                ;;
-            esac
-        fi
-    fi
-
-    if [[ "$ProductName" == "bengal"* ]]; then
-        #Set PPR nomap parameters for bengal targets
-        echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-        echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-        echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-        echo 0 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo 7680 > /sys/module/process_reclaim/parameters/tsk_nomap_swap_sz
-    fi
-
-    # Set allocstall_threshold to 0 for all targets.
-    # Set swappiness to 60 for all targets
-    echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    echo 60 > /proc/sys/vm/swappiness
-
-    # Disable wsf for all targets beacause we are using efk.
-    # wsf Range : 1..1000 So set to bare minimum value 1.
-    echo 1 > /proc/sys/vm/watermark_scale_factor
-
-    # Disable the feature of watermark boost for 8G and below device
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    if [ $MemTotal -le 8388608 ]; then
-        echo 0 > /proc/sys/vm/watermark_boost_factor
-    fi
+if [ $MemTotal -le 8388608 ]; then
+    echo 0 > /proc/sys/vm/watermark_boost_factor
+fi
 
     configure_zram_parameters
 
     configure_read_ahead_kb_values
 
-    enable_swap
 }
 
 function enable_memory_features()
