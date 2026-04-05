@@ -329,16 +329,6 @@ chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
-emmc_boot=`getprop vendor.boot.emmc`
-case "$emmc_boot"
-    in "true")
-        chown -h system /sys/devices/platform/rs300000a7.65536/force_sync
-        chown -h system /sys/devices/platform/rs300000a7.65536/sync_sts
-        chown -h system /sys/devices/platform/rs300100a7.65536/force_sync
-        chown -h system /sys/devices/platform/rs300100a7.65536/sync_sts
-    ;;
-esac
-
 # Post-setup services
 setprop vendor.post_boot.parsed 1
 
