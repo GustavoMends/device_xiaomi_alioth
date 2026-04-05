@@ -325,10 +325,6 @@ setprop vendor.dcvs.prop 1
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 configure_memory_parameters
 
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
-
 # Post-setup services
 setprop vendor.post_boot.parsed 1
 
