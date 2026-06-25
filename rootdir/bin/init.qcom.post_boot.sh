@@ -36,8 +36,6 @@ function configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
 
-    low_ram=`getprop ro.config.low_ram`
-
     # Zram disk - 75% for Go devices.
     # For 512MB Go device, size = 384MB, set same for Non-Go.
     # For 1GB Go device, size = 768MB, set same for Non-Go.
@@ -47,20 +45,10 @@ function configure_zram_parameters() {
 
     let RamSizeGB="( $MemTotal / 1048576 ) + 1"
     diskSizeUnit=M
-    if [ $RamSizeGB -le 2 ]; then
-        let zRamSizeMB="( $RamSizeGB * 1024 ) * 3 / 4"
-    else
-        let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
-    fi
 
-    # use MB avoid 32 bit overflow
-    if [ $zRamSizeMB -gt 4096 ]; then
-        let zRamSizeMB=4096
-    fi
+    let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
 
-    if [ "$low_ram" == "true" ]; then
-        echo lz4 > /sys/block/zram0/comp_algorithm
-    fi
+    echo lz4 > /sys/block/zram0/comp_algorithm
 
     if [ -f /sys/block/zram0/disksize ]; then
         disksize=`cat /sys/block/zram0/disksize`
